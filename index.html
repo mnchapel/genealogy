@@ -14,7 +14,7 @@
 	</div>
 
 
-<script>
+<script type="text/javascript">
 	var openpgp = require('openpgp');
 	opengpgp.initWorker({ path:'openpgp.worker.min.js' });
 
@@ -26,7 +26,7 @@
 
 	openpgp.decrypt(options).then(function(plainText) {
 		console.log("contenu du fichier : " + plainText.data);
-	});
+	}); 
 </script>
 
 </body>
