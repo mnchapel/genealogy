@@ -67,18 +67,18 @@ function LoadFile()
 	});*/
 
 	// Read encrypted file
-	/*const reader = new FileReader();
-	var file = new File(["test"], "/data/test.gpg");
+	const reader = new FileReader();
+	var file = new File(["test"], "data/test.gpg");
 	reader.readAsText(file);
 
 	reader.onLoad = function(e) {
 		console.log("ok");
 		//console.log("reader result: " + reader.result);
 		//encrypted = reader.result;
-	}*/
+	}
 
 	// Read encrypted file
-	encrypted = getText();
+	//encrypted = getText();
 
 	//Decrypt
 	/*options = {
