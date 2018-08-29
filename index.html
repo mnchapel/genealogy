@@ -3,10 +3,20 @@
 
 <body>
 
-<iframe id="frmFile" src="data/test.gpg" onload="LoadFile();" style="display: none;"></iframe>
+<!--<iframe id="frmFile" src="data/test.gpg" onload="LoadFile();" style="display: none;"></iframe>-->
 
 <script src="js/openpgp.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+
+$.get("data/test.pgp", function(response)
+{
+     var logfile = response;
+});
+
+
+
+
 function getText()
 {
 	// read text from URL location
@@ -68,7 +78,7 @@ function LoadFile()
 
 	// Read encrypted file
 	/*const reader = new FileReader();
-	var file = new File(["test"], "data/test.gpg");
+	var file = new File([""], "data/test.gpg");
 	reader.readAsText(file);
 
 	reader.onLoad = function(e) {
