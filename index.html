@@ -93,7 +93,7 @@ function LoadFile()
 	options = {
 		message: await openpgp.message.read(encrypted), // parse encrypted bytes
 		passwords: ['testpassword'],              		// decrypt with password
-		format: 'ascii'                          		// output as Uint8Array
+		format: 'utf8'                          		// output as Uint8Array
 	};
 
 	openpgp.decrypt(options).then(function(plainText) {
