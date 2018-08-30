@@ -30,7 +30,7 @@
 			var encrypted = await readFile("data/test.asc");		
 			console.log("encrypted file: " + encrypted);
 			await decrypt(encrypted, password);
-			window.open("mainWindow.html");
+			window.open("mainWindow.html", "_self", "false");
 		}
 			
 	});
