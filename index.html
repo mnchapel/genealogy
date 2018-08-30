@@ -18,8 +18,9 @@
 	document.getElementById("login").addEventListener("click", async function()
 	{
 		var output = document.getElementById("output");
+		var password = document.getElementById("password").value;
 
-		if(document.getElementById("password").value == "")
+		if(password == "")
 		{
 			output.innerHTML = "No password provided";
 			output.style.color = "red";
@@ -28,33 +29,10 @@
 		{
 			var encrypted = await readFile("data/test.asc");		
 			console.log("encrypted file: " + encrypted);
-			await decrypt(encrypted);
+			await decrypt(encrypted, password);
 		}
 			
 	});
-
-
-
-	/*var options, encrypted;
-
-	// Read encrypted file
-	await $.get("data/test.asc", function(response)
-	{
-		encrypted = response;
-		console.log("read encrypted file: " + encrypted);
-	});
-
-
-	//Decrypt
-	options = {
-		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
-		passwords: ['testpassword'],              		// decrypt with password
-		format: 'utf8'                          		// output as Uint8Array
-	};
-
-	openpgp.decrypt(options).then(function(plainText) {
-		console.log("contenu du fichier : " + plainText.data);
-	});*/
 
 })();
 </script>
