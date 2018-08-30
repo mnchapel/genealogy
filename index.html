@@ -26,11 +26,35 @@
 		}
 		else
 		{
-			encrypted = readFile('data/test.asc');
+			encrypted = readFile('data/test.asc');		
+			console.log("read file: " + encrypted);
 			decrypt(encrypted);
 		}
 			
 	});
+
+
+
+	/*var options, encrypted;
+
+	// Read encrypted file
+	await $.get("data/test.asc", function(response)
+	{
+		encrypted = response;
+		console.log("read encrypted file: " + encrypted);
+	});
+
+
+	//Decrypt
+	options = {
+		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
+		passwords: ['testpassword'],              		// decrypt with password
+		format: 'utf8'                          		// output as Uint8Array
+	};
+
+	openpgp.decrypt(options).then(function(plainText) {
+		console.log("contenu du fichier : " + plainText.data);
+	});*/
 
 })();
 </script>
