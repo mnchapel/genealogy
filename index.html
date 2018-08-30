@@ -26,9 +26,9 @@
 		}
 		else
 		{
-			encrypted = readFile('data/test.asc');		
+			await encrypted = readFile('data/test.asc');		
 			console.log("read file: " + encrypted);
-			decrypt(encrypted);
+			await decrypt(encrypted);
 		}
 			
 	});
