@@ -1,6 +1,6 @@
-async function readFile(path)
+function readFile(path)
 {
-	await $.get(path, async function(response)
+	$.get(path, function(response)
 	{
 		console.log("read file: " + response);
 		return response;
