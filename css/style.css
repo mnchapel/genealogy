@@ -1,0 +1,39 @@
+body{
+	background:#efe8d6
+}
+
+svg{
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%
+}
+
+.person{
+  font: 14px sans-serif;
+}
+
+.link{
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.circle{
+  height: 100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.blue{
+	background:#8db2be;
+	border-color:#8db2be
+}
+
+.pink{
+	background:#e78a91;
+	border-color:#e78a91
+}
