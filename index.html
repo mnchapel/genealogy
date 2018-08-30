@@ -3,11 +3,31 @@
 
 <body>
 
+<p>Password: </p><input id="password" type="password" />
+<button id="login">Login</button>
+<p id="output"></p>
+
 <script src="js/openpgp.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
 (async function() {
+
+	document.getElementById("login").addEventListener("click", function()
+	{
+		var output = document.getElementbyId("output");
+
+		if(document.getElementById("password").value == "")
+		{
+			output.innerHTML = "No password provided";
+			output.style.color = "red";
+		}
+		else
+		{
+			
+		}
+			
+	});
 
 	var options, encrypted;
 
