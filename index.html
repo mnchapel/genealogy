@@ -58,7 +58,8 @@ function LoadFile()
 
 	await $.get("data/test.gpg", function(response)
 	{
-		 encrypted = response;
+		encrypted = response;
+		console.log("read encrypted file: " + encrypted);
 	});
 
 
@@ -91,8 +92,8 @@ function LoadFile()
 	//Decrypt
 	options = {
 		message: await openpgp.message.read(encrypted), // parse encrypted bytes
-		passwords: ['testpassword'],              // decrypt with password
-		format: 'binary'                          // output as Uint8Array
+		passwords: ['testpassword'],              		// decrypt with password
+		format: 'binary'                          		// output as Uint8Array
 	};
 
 	openpgp.decrypt(options).then(function(plainText) {
