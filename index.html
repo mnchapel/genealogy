@@ -3,59 +3,15 @@
 
 <body>
 
-<!--<iframe id="frmFile" src="data/test.gpg" onload="LoadFile();" style="display: none;"></iframe>-->
-
 <script src="js/openpgp.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-
-
-
-
-function getText()
-{
-	// read text from URL location
-	var request = new XMLHttpRequest();
-	request.open('GET', 'https://github.com/mnchapel/genealogy/blob/gh-pages/data/test.gpg', true);
-	request.send(null);
-	request.onreadystatechange = function ()
-	{
-		if(request.readyState === 4 && request.status === 200)
-		{
-			var type = request.getResponseHeader('Content-Type');
-			//if (type.indexOf("text") !== 1)
-			{
-				return request.responseText;
-			}
-		}
-	}
-}
-
-
-function LoadFile()
-{
-    /*var oFrame = document.getElementById("frmFile");
-    var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
-
-    /*while (strRawContents.indexOf("\r") >= 0)
-        strRawContents = strRawContents.replace("\r", "");
-
-    var arrLines = strRawContents.split("\n");
-    alert("File " + oFrame.src + " has " + arrLines.length + " lines");
-    for(var i=0; i<arrLines.length; i++)
-	{
-        var curLine = arrLines[i];
-        alert("Line #" + (i + 1) + " is: '" + curLine + "'");
-    }*/
-}
-
-
 
 (async function() {
 
 	var options, encrypted;
 
-
+	// Read encrypted file
 	await $.get("data/test.asc", function(response)
 	{
 		encrypted = response;
@@ -75,23 +31,10 @@ function LoadFile()
 		console.log("encryped: " + encrypted);
 	});*/
 
-	// Read encrypted file
-	/*const reader = new FileReader();
-	var file = new File([""], "data/test.gpg");
-	reader.readAsText(file);
-
-	reader.onLoad = function(e) {
-		console.log("ok");
-		//console.log("reader result: " + reader.result);
-		//encrypted = reader.result;
-	}*/
-
-	// Read encrypted file
-	//encrypted = getText();
 
 	//Decrypt
 	options = {
-		message: await openpgp.message.read(encrypted), // parse encrypted bytes
+		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
 		passwords: ['testpassword'],              		// decrypt with password
 		format: 'utf8'                          		// output as Uint8Array
 	};
