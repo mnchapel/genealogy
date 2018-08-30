@@ -1,8 +1,12 @@
-function readFile(path)
+async function readFile(path)
 {
-	$.get(path, function(response)
+	var encrypted;
+
+	await $.get(path, function(response)
 	{
 		console.log("read file: " + response);
-		return response;
+		encrypted = response;
 	});
+
+	return encrypted;
 }
