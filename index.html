@@ -15,7 +15,7 @@
 
 	document.getElementById("login").addEventListener("click", function()
 	{
-		var output = document.getElementbyId("output");
+		var output = document.getElementById("output");
 
 		if(document.getElementById("password").value == "")
 		{
@@ -24,44 +24,12 @@
 		}
 		else
 		{
-			
+			encrypted = readFile('data/test.asc');
+			decrypt(encrypted);
 		}
 			
 	});
 
-	var options, encrypted;
-
-	// Read encrypted file
-	await $.get("data/test.asc", function(response)
-	{
-		encrypted = response;
-		console.log("read encrypted file: " + encrypted);
-	});
-
-
-	// Encrypt
-	/*options = {
-		message: openpgp.message.fromBinary(new Uint8Array([0x01, 0x01, 0x01])), // input as Message object
-		passwords: ['secret stuff'],                                             // multiple passwords possible
-		armor: false                                                             // don't ASCII armor (for Uint8Array output)
-	};
-
-	await openpgp.encrypt(options).then(function(ciphertext) {
-		encrypted = ciphertext.message.packets.write(); // get raw encrypted packets as Uint8Array
-		console.log("encryped: " + encrypted);
-	});*/
-
-
-	//Decrypt
-	options = {
-		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
-		passwords: ['testpassword'],              		// decrypt with password
-		format: 'utf8'                          		// output as Uint8Array
-	};
-
-	openpgp.decrypt(options).then(function(plainText) {
-		console.log("contenu du fichier : " + plainText.data);
-	});
 })();
 </script>
 
