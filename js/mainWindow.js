@@ -5,21 +5,21 @@ var boxWidth = 100,
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
-  .scaleExtent([.1,1])
-  .on('zoom', function(){
-    svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
-  })
-  // Offset so that first pan and zoom does not jump back to the origin
-  .translate([150, 200]);
+	.scaleExtent([.1,1])
+	.on('zoom', function(){
+	svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+	})
+	// Offset so that first pan and zoom does not jump back to the origin
+	.translate([150, 200]);
 
 var svg = d3.select("body").append("svg")
-  .attr('width', "100%")
-  .attr('height', "100%")
-  .call(zoom)
-  .append('g')
-  // Left padding of tree so that the whole root node is on the screen.
-  // TODO: find a better way
-  .attr("transform", "translate(150,200)");
+	.attr('width', "100%")
+	.attr('height', "100%")
+	.call(zoom)
+	.append('g')
+	// Left padding of tree so that the whole root node is on the screen.
+	// TODO: find a better way
+	.attr("transform", "translate(150,200)");
 
 var tree = d3.layout.tree()
   // Using nodeSize we are able to control
@@ -59,9 +59,11 @@ d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-page
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 	  
 	// Draw the circle
-	node.append("circle")
+	node.append("image")
+		.attr("src", "img/hex-pink.png");
+	/*node.append("circle")
 		.attr("r", 50)
-		.attr("fill" , "#e78a91");
+		.attr("fill" , "#e78a91");*/
 		
 	// Draw the person's name and position it inside the box
 	node.append("text")

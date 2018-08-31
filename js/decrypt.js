@@ -1,6 +1,5 @@
 async function decrypt(encrypted, password)
 {
-	console.log("in decrypt fun: " + encrypted);
 	var options =
 	{
 		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
@@ -11,6 +10,5 @@ async function decrypt(encrypted, password)
 	openpgp.decrypt(options).then(function(plainText)
 	{
 		tree = plainText.data;
-		console.log("contenu du fichier : " + plainText.data);
 	});
 }

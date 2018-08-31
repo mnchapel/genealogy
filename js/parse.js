@@ -11,7 +11,7 @@ function parseTree()
 		if(lineSplited[0] == "0"
 		&& lineSplited[2] == "INDI")
 		{
-			console.log("indi " + i);
+			
 		}
 
 		// FAMILLY
