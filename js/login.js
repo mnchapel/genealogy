@@ -2,9 +2,7 @@
 
 	document.getElementById("login").addEventListener("click", async function()
 	{
-		document.getElementById("content").innerHTML = "";
 
-		/*
 		var output = document.getElementById("output");
 		var password = document.getElementById("password").value;
 
@@ -20,9 +18,10 @@
 			encrypted = await readFile("data/test.asc");		
 			console.log("encrypted file: " + encrypted);
 			await decrypt(encrypted, password);
-			window.open("mainWindow.html");
+			// TODO add test on the password
+			document.getElementById("content").innerHTML = "";
+			$("#content").load("mainWindow.html");
 		}
-		*/
 			
 	});
 
