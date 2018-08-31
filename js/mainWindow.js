@@ -1,5 +1,3 @@
-await $.getScript("js/parse.js")
-
 parseTree();
 
 var boxWidth = 100,

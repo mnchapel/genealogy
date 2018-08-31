@@ -20,6 +20,7 @@
 			document.getElementById("content").innerHTML = "";
 			$("#content").load("mainWindow.html", function()
 			{
+				$.getScript("js/parse.js");
 				$.getScript("js/mainWindow.js");
 			});
 		}
