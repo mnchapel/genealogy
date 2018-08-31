@@ -12,11 +12,11 @@
 <script src="js/decrypt.js"></script>
 
 <script type="text/javascript">
-	$("#content").load("login.html");
+	$("#content").load("login.html", function(){
+		$.getScript("js/login.js");
+	});
 	var encrypted;
 </script>
-
-<script src="js/login.js"></script>
 
 </body>
 
