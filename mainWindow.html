@@ -13,6 +13,8 @@
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
+var tree = window.opener.encrypted;
+
 var boxWidth = 100,
     boxHeight = 40;
 
@@ -83,37 +85,6 @@ d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-page
 		.attr("text-anchor", "start")
 		.attr('class', 'name')
 		.text(function(d) { return d.name; });
-		
-	
-	// Check for the various File API support.
-	if (window.File && window.FileReader && window.FileList && window.Blob) {
-	  // Great success! All the File APIs are supported.
-	} else {
-	  alert('The File APIs are not fully supported in this browser.');
-	}
-	
-	
-	
-	
-	
-	
-	var Dropbox = require('dropbox');
-	var dbx = new Dropbox({accessToken: '...'});
-
-	dbx.filesDownload({path: 'tree.ged'})
-		.then(function (response)
-		{
-			var blob = response.fileBlob;
-			var reader = new FileReader();
-			reader.addEventListener("loadend", function()
-			{
-				console.log(reader.result); // will print out file content
-			});
-			reader.readAsText(blob);
-		})
-		.catch(function (error)
-		{
-		})
       
 });
     

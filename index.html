@@ -14,6 +14,7 @@
 <script type="text/javascript">
 
 (async function() {
+	var encrypted;
 
 	document.getElementById("login").addEventListener("click", async function()
 	{
@@ -27,7 +28,7 @@
 		}
 		else
 		{
-			var encrypted = await readFile("data/test.asc");		
+			encrypted = await readFile("data/test.asc");		
 			console.log("encrypted file: " + encrypted);
 			await decrypt(encrypted, password);
 			window.open("mainWindow.html", "_self", "false");
