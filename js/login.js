@@ -1,6 +1,7 @@
 (async function() {
 
-	document.getElementById("login").addEventListener("click", async function()
+	$('#login').on('click', 'null', async function()
+	//document.getElementById("login").addEventListener("click", async function()
 	{
 
 		var output = document.getElementById("output");
