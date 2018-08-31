@@ -1,4 +1,6 @@
-console.log("tree : " + tree);
+$.getScript("js/parse.js")
+
+parseTree();
 
 var boxWidth = 100,
     boxHeight = 40;
