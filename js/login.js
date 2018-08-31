@@ -3,11 +3,8 @@
 	$('#login').on('click', async function()
 	//document.getElementById("login").addEventListener("click", async function()
 	{
-
 		var output = document.getElementById("output");
 		var password = document.getElementById("password").value;
-
-		window.location = "mainWindow.html";
 
 		if(password == "")
 		{
