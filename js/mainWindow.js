@@ -1,4 +1,4 @@
-$.getScript("js/parse.js")
+await $.getScript("js/parse.js")
 
 parseTree();
 
