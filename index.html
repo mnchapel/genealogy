@@ -3,9 +3,9 @@
 
 <body>
 
-<p>Password: </p><input id="password" type="password" />
-<button id="login">Login</button>
-<p id="output"></p>
+<div id="content">
+	
+</div>
 
 <script src="js/openpgp.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -13,10 +13,11 @@
 <script src="js/decrypt.js"></script>
 <script type="text/javascript">
 
-	var aa = "abc";
-	window.aa = aa;
+window.aa = "abc";
 
-(async function() {
+$("#content").load("login.html"); 
+
+/*(async function() {
 	var encrypted;
 
 	document.getElementById("login").addEventListener("click", async function()
@@ -24,7 +25,7 @@
 		var output = document.getElementById("output");
 		var password = document.getElementById("password").value;
 
-		window.open("mainWindow.html", "_self", "false");
+		window.location = "mainWindow.html";
 
 		if(password == "")
 		{
@@ -36,12 +37,12 @@
 			encrypted = await readFile("data/test.asc");		
 			console.log("encrypted file: " + encrypted);
 			await decrypt(encrypted, password);
-			window.location = "mainWindow.html";
+			window.open("mainWindow.html");
 		}
 			
 	});
 
-})();
+})();*/
 </script>
 
 </body>
