@@ -13,15 +13,16 @@
 <script src="js/decrypt.js"></script>
 <script type="text/javascript">
 
-window.aa = "abc";
+$("#content").load("login.html");
+var encrypted;
 
-$("#content").load("login.html"); 
-
-/*(async function() {
-	var encrypted;
+(async function() {
 
 	document.getElementById("login").addEventListener("click", async function()
 	{
+		document.getElementById("content").innerHTML = "";
+
+		/*
 		var output = document.getElementById("output");
 		var password = document.getElementById("password").value;
 
@@ -39,10 +40,11 @@ $("#content").load("login.html");
 			await decrypt(encrypted, password);
 			window.open("mainWindow.html");
 		}
+		*/
 			
 	});
 
-})();*/
+})();
 </script>
 
 </body>
