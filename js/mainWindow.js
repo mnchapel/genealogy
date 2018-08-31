@@ -1,3 +1,5 @@
+console.log("tree : " + tree);
+
 var boxWidth = 100,
     boxHeight = 40;
 
