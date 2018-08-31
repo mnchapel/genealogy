@@ -4,7 +4,6 @@ async function readFile(path)
 
 	await $.get(path, function(response)
 	{
-		console.log("read file: " + response);
 		encrypted = response;
 	});
 
