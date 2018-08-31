@@ -18,7 +18,10 @@
 			await decrypt(encrypted, password);
 			// TODO add test on the password
 			document.getElementById("content").innerHTML = "";
-			$("#content").load("mainWindow.html");
+			$("#content").load("mainWindow.html", function()
+			{
+				$.getScript("js/mainWindow.js");
+			});
 		}
 			
 	});
