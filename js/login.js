@@ -13,7 +13,7 @@
 		}
 		else
 		{
-			encrypted = await readFile("data/test.asc");		
+			encrypted = await readFile("data/tree.asc");		
 			console.log("encrypted file: " + encrypted);
 			await decrypt(encrypted, password);
 			// TODO add test on the password
