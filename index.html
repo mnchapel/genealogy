@@ -13,6 +13,9 @@
 <script src="js/decrypt.js"></script>
 <script type="text/javascript">
 
+	var aa = "abc";
+	window.aa = aa;
+
 (async function() {
 	var encrypted;
 
@@ -20,6 +23,8 @@
 	{
 		var output = document.getElementById("output");
 		var password = document.getElementById("password").value;
+
+		window.open("mainWindow.html", "_self", "false");
 
 		if(password == "")
 		{
