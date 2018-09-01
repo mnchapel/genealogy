@@ -60,7 +60,9 @@ d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-page
 	  
 	// Draw the circle
 	node.append("image")
-		.attr("xlink:href", "img/hex-pink.png");
+		.attr("xlink:href", "img/hex-pink.png")
+		.attr("height", 100)
+		.attr("width", 100);
 	/*node.append("circle")
 		.attr("r", 50)
 		.attr("fill" , "#e78a91");*/
