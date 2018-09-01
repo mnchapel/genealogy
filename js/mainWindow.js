@@ -57,12 +57,16 @@ d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-page
 		.enter().append("g")
 		.attr("class", "person")
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-	  
-	// Draw the circle
+
+	// Draw the hexagon
 	node.append("image")
 		.attr("xlink:href", "img/hex-pink.png")
+		.attr("x", -50)
+		.attr("y", -50)
 		.attr("height", 100)
 		.attr("width", 100);
+
+	// Draw the circle
 	/*node.append("circle")
 		.attr("r", 50)
 		.attr("fill" , "#e78a91");*/
