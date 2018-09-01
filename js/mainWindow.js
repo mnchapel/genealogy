@@ -60,7 +60,7 @@ d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-page
 
 	// Draw the hexagon
 	node.append("image")
-		.attr("xlink:href", "img/hex-pink.png")
+		.attr("xlink:href", "img/hexagon_pink.png")
 		.attr("x", -50)
 		.attr("y", -50)
 		.attr("height", 100)
