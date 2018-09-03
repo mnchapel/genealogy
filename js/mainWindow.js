@@ -127,7 +127,7 @@ function spouseLine(d, i)
 	var end = allNodes.filter(function(v)
 	{
 		console.log(typeof v.id + " " + typeof d.target.id);
-		console.log(d.target.id + " " + typeof v.id);
+		console.log(d.target.id + " " + v.id);
 		if(Number(d.target.id) == Number(v.id))
 			return true;
 		else
