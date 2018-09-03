@@ -131,6 +131,9 @@ function spouseLine(d, i)
 			return false;
 	});
 
+	console.log("start " + start.name);
+	console.log("end " + end.name);
+
 	//define the start coordinate and end co-ordinate
 	var linedata =
 	[{

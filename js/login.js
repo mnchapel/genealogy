@@ -16,7 +16,6 @@
 			await decrypt(encrypted, password);
 			
 			spouseDataString = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json");
-			console.log("spouseDataString " + spouseDataString);
 
 			// TODO add test on the password
 			document.getElementById("content").innerHTML = "";
