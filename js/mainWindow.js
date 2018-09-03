@@ -15,24 +15,12 @@ var svg = d3.select("body").append("svg")
 	.attr('height', "100%")
 	.call(zoom)
 	.append('g')
-	// Left padding of tree so that the whole root node is on the screen.
-	// TODO: find a better way
 	.attr("transform", "translate(150,200)");
 
 var tree = d3.layout.tree()
-  // Using nodeSize we are able to control
-  // the separation between nodes. If we used
-  // the size parameter instead then d3 would
-  // calculate the separation dynamically to fill
-  // the available space.
   .nodeSize([175, 150])
-  // By default, cousins are drawn further apart than siblings.
-  // By returning the same value in all cases, we draw cousins
-  // the same distance apart as siblings.
   .separation(function(){ return 1.; })
-  // Tell d3 what the child nodes are. Remember, we're drawing
-  // a tree so the ancestors are child nodes.
-  .children(function(person){ return person._parents; });
+  .children(function(d){ return d.parents; });
 
 var nodes = tree.nodes(treeData);
 
