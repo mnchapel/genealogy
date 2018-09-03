@@ -126,7 +126,7 @@ function spouseLine(d, i)
 	//end point
 	var end = allNodes.filter(function(v)
 	{
-		if(Number(d.target.id) == v.id)
+		if(Number(d.target.id) == Number(v.id))
 			return true;
 		else
 			return false;
