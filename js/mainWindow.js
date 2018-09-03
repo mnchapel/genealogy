@@ -4,7 +4,7 @@ var boxWidth = 100,
 
 var spouseDataJson;
 var treeDataJson = JSON.parse(treeData);
-d3.json("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json", function(data) { spouseDataJson = data; });
+d3.json("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json", function(data) { spouseDataJson = data[0]; });
 
 console.log(treeData);
 console.log(spouseDataJson);
