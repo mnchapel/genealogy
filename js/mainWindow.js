@@ -1,6 +1,8 @@
 var boxWidth = 100,
     boxHeight = 40;
 
+console.log(treeData);
+
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
