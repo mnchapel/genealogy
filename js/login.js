@@ -12,7 +12,7 @@
 		}
 		else
 		{
-			encrypted = await readFile("data/tree.asc");
+			encrypted = await readFile("data/treeData.asc");
 			await decrypt(encrypted, password);
 			// TODO add test on the password
 			document.getElementById("content").innerHTML = "";

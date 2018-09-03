@@ -36,7 +36,7 @@ var tree = d3.layout.tree()
   // a tree so the ancestors are child nodes.
   .children(function(person){ return person._parents; });
 
-d3.json('https://raw.githubusercontent.com/justincy/d3-pedigree-examples/gh-pages/data/4gens.json', function(error, json){
+d3.json(treeData, function(error, json){
   
 	if(error) {
 		return console.error(error);
