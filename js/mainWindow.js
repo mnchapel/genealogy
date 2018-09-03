@@ -45,7 +45,7 @@ function flatten(root)
 
 
 
-var allNodes = flatten(treeData[0]);
+var allNodes = flatten(treeData);
 
 
 
