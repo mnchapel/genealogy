@@ -7,9 +7,6 @@ var treeDataJson = JSON.parse(treeData);
 
 var spouseDataJson = JSON.parse(spouseDataString);
 
-console.log(treeData);
-console.log(spouseDataJson);
-
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
@@ -131,10 +128,6 @@ function spouseLine(d, i)
 		else
 			return false;
 	});
-
-	console.log("source " + d.source.id);
-	console.log("start " + start[0].id);
-	console.log("end " + end[0].id);
 
 	//define the start coordinate and end co-ordinate
 	var linedata =
