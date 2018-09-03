@@ -36,45 +36,35 @@ var tree = d3.layout.tree()
 
 var nodes = tree.nodes(treeData);
 
-/*d3.json(treeData, function(error, json){
-  
-	if(error) {
-		return console.error(error);
-	}
-  
-	var nodes = tree.nodes(json), links = tree.links(nodes);
+// Style links (edges)
+/*svg.selectAll("path.link")
+	.data(links)
+	.enter().append("path")
+	.attr("class", "link")
+	.attr("d", elbow);*/
 
-	// Style links (edges)
-	svg.selectAll("path.link")
-		.data(links)
-		.enter().append("path")
-		.attr("class", "link")
-		.attr("d", elbow);
+// Style nodes    
+var node = svg.selectAll("g.person")
+	.data(nodes)
+	.enter().append("g")
+	.attr("class", "person")
+	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-	// Style nodes    
-	var node = svg.selectAll("g.person")
-		.data(nodes)
-		.enter().append("g")
-		.attr("class", "person")
-		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-	// Draw the hexagon
-	node.append("image")
-		.attr("xlink:href", "img/hexagon_pink.png")
-		.attr("x", -50)
-		.attr("y", -50)
-		.attr("height", 100)
-		.attr("width", 100);
-		
-	// Draw the person's name and position it inside the box
-	node.append("text")
-		.attr("dx", -(boxWidth/2) + 10)
-		.attr("dy", 0)
-		.attr("text-anchor", "start")
-		.attr('class', 'name')
-		.text(function(d) { return d.name; });
-      
-});*/
+// Draw the hexagon
+node.append("image")
+	.attr("xlink:href", "img/hexagon_pink.png")
+	.attr("x", -50)
+	.attr("y", -50)
+	.attr("height", 100)
+	.attr("width", 100);
+	
+// Draw the person's name and position it inside the box
+node.append("text")
+	.attr("dx", -(boxWidth/2) + 10)
+	.attr("dy", 0)
+	.attr("text-anchor", "start")
+	.attr('class', 'name')
+	.text(function(d) { return d.name; });
     
 /**
  * Custom path function that creates straight connecting lines.
