@@ -1,10 +1,12 @@
 var boxWidth = 100,
     boxHeight = 40;
 
-console.log(treeData);
 
 var treeDataJson = JSON.parse(treeData);
 var spouseDataJson = d3.json("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.asc");
+
+console.log(treeData);
+console.log(spouseDataJson);
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
