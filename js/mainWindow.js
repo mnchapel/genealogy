@@ -84,9 +84,9 @@ node.append("image")
 	
 // Draw the person's name and position it inside the box
 node.append("text")
-	.attr("dx", -(boxWidth/2) + 10)
+	.attr("dx", (boxWidth/2))
 	.attr("dy", 0)
-	.attr("text-anchor", "start")
+	.attr("text-anchor", "middle")
 	.attr('class', 'name')
 	.text(function(d) { return d.name; });
     
