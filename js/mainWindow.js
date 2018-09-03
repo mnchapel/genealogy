@@ -115,8 +115,9 @@ svg.selectAll(".spouseLine")
 function spouseLine(d, i)
 {
 	//start point
-	var start = allNodes.filter(function (v)
+	var start = allNodes.filter(function(v)
 	{
+		console.log("v.id: " + v.id);
 		if(d.source.id == v.id)
 			return true;
 		else
@@ -124,7 +125,7 @@ function spouseLine(d, i)
 	});
 
 	//end point
-	var end = allNodes.filter(function (v)
+	var end = allNodes.filter(function(v)
 	{
 		if(d.target.id == v.id)
 			return true;
@@ -139,11 +140,11 @@ function spouseLine(d, i)
 	//define the start coordinate and end co-ordinate
 	var linedata =
 	[{
-		x: start[0].x+75,
+		x: start[0].x,
 		y: start[0].y
 	},
 	{
-		x: end[0].x-75,
+		x: end[0].x,
 		y: end[0].y
 	}];
 
