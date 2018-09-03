@@ -34,7 +34,9 @@ var tree = d3.layout.tree()
   // a tree so the ancestors are child nodes.
   .children(function(person){ return person._parents; });
 
-d3.json(treeData, function(error, json){
+var nodes = tree.nodes(treeData);
+
+/*d3.json(treeData, function(error, json){
   
 	if(error) {
 		return console.error(error);
@@ -63,11 +65,6 @@ d3.json(treeData, function(error, json){
 		.attr("y", -50)
 		.attr("height", 100)
 		.attr("width", 100);
-
-	// Draw the circle
-	/*node.append("circle")
-		.attr("r", 50)
-		.attr("fill" , "#e78a91");*/
 		
 	// Draw the person's name and position it inside the box
 	node.append("text")
@@ -77,7 +74,7 @@ d3.json(treeData, function(error, json){
 		.attr('class', 'name')
 		.text(function(d) { return d.name; });
       
-});
+});*/
     
 /**
  * Custom path function that creates straight connecting lines.
