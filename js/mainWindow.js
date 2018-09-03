@@ -72,8 +72,15 @@ node.append("image")
 	.attr("xlink:href", "img/hexagon_pink.png")
 	.attr("x", -50)
 	.attr("y", -50)
-	.attr("height", 100)
-	.attr("width", 100);
+	.attr("height", 150)
+	.attr("width", 150)
+	.attr("display", function(d)
+	{
+		if(d.hidden)
+			return "none";
+		else
+			return "";
+	});
 	
 // Draw the person's name and position it inside the box
 node.append("text")
