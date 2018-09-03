@@ -1,5 +1,3 @@
-parseTree();
-
 var boxWidth = 100,
     boxHeight = 40;
 
