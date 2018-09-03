@@ -38,6 +38,15 @@ svg{
 	border-color:#e78a91
 }
 
-.name{
+.firstname{
 	fill: white
+}
+
+.lastname{
+	fill: white
+}
+
+.spouseLine{
+	fill:none,
+	stroke: #d8d1c1
 }

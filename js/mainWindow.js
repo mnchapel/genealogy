@@ -3,7 +3,8 @@ var boxWidth = 100,
 
 console.log(treeData);
 
-treeDataJson = JSON.parse(treeData);
+var treeDataJson = JSON.parse(treeData);
+var spouseDataJson = d3.json("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.asc");
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
@@ -84,7 +85,7 @@ node.append("image")
 // Draw the person's firstname and position it inside the box
 node.append("text")
 	.attr("dx", 0)
-	.attr("dy", 0)
+	.attr("dy", -10)
 	.attr("text-anchor", "middle")
 	.attr('class', 'firstname')
 	.text(function(d) { return d.firstname; });
@@ -96,6 +97,56 @@ node.append("text")
 	.attr("text-anchor", "middle")
 	.attr('class', 'lastname')
 	.text(function(d) { return d.lastname; });
+
+// Draw the spouse lines
+svg.selectAll(".spouseLine")
+	.data(spouseDataJson)
+	.enter()
+	.append("path")
+	.attr("class", "spouseLine")
+	.attr("d", spouseLine);
+
+
+function spouseLine(d, i)
+{
+	//start point
+	var start = allNodes.filter(function (v)
+	{
+		if (d.source.id == v.id)
+			return true;
+		else
+			return false;
+	});
+
+	//end point
+	var end = allNodes.filter(function (v)
+	{
+		if (d.target.id == v.id)
+			return true;
+		else
+			return false;
+	});
+
+	//define the start coordinate and end co-ordinate
+	var linedata =
+	[{
+		x: start[0].x+75,
+		y: start[0].y
+	},
+	{
+		x: end[0].x-75,
+		y: end[0].y
+	}];
+
+	var fun = d3.svg.line().x(function(d){ return d.x; })
+				.y(function(d){ return d.y; })
+				.interpolate("linear");
+
+	return fun(linedata);
+}
+
+
+
     
 /**
  * Custom path function that creates straight connecting lines.
