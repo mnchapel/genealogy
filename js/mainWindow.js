@@ -4,7 +4,8 @@ var boxWidth = 100,
 
 var spouseDataJson;
 var treeDataJson = JSON.parse(treeData);
-d3.json("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json", function(data) { spouseDataJson = data[0]; });
+
+var spouseDataJson = JSON.parse(spouseDataString);
 
 console.log(treeData);
 console.log(spouseDataJson);
@@ -103,7 +104,7 @@ node.append("text")
 
 // Draw the spouse lines
 svg.selectAll(".spouseLine")
-	.data(spouseDataJson)
+	.data(spouseDataJson[0])
 	.enter()
 	.append("path")
 	.attr("class", "spouseLine")
