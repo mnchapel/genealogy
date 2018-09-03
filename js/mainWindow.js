@@ -22,7 +22,7 @@ var svg = d3.select("body").append("svg")
 	.attr("transform", "translate(150,200)");
 
 var tree = d3.layout.tree()
-  .nodeSize([175, 150])
+  .nodeSize([175, 175])
   .separation(function(){ return 1.; })
   .children(function(d){ return d.parents; });
 
@@ -69,9 +69,9 @@ var node = svg.selectAll("g.person")
 
 // Draw the hexagon
 node.append("image")
-	.attr("xlink:href", "img/hexagon_pink.png")
-	.attr("x", -50)
-	.attr("y", -50)
+	.attr("xlink:href", function(d){ if(d.sex == "M") return "img/hexagon_blue.png"; return "img/hexagon_pink.png"; })
+	.attr("x", -75)
+	.attr("y", -75)
 	.attr("height", 150)
 	.attr("width", 150)
 	.attr("display", function(d)
