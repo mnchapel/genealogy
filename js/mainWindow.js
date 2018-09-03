@@ -117,7 +117,6 @@ function spouseLine(d, i)
 	//start point
 	var start = allNodes.filter(function(v)
 	{
-		console.log("v.id: " + v.id + " source " + d.source.id + " " + d.source.id == v.id);
 		if(d.source.id == v.id)
 			return true;
 		else
@@ -127,7 +126,7 @@ function spouseLine(d, i)
 	//end point
 	var end = allNodes.filter(function(v)
 	{
-		if(d.target.id == v.id)
+		if(Number(d.target.id) == v.id)
 			return true;
 		else
 			return false;
