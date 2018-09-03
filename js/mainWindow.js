@@ -126,9 +126,6 @@ function spouseLine(d, i)
 	//end point
 	var end = allNodes.filter(function(v)
 	{
-		console.log(typeof v.id + " " + typeof d.target.id);
-		console.log(d.target.id + " " + v.id);
-		console.log(d.target.id == v.id);
 		if(d.target.id == v.id)
 			return true;
 		else
@@ -136,8 +133,8 @@ function spouseLine(d, i)
 	});
 
 	console.log("source " + d.source.id);
-	console.log("start " + start.id);
-	console.log("end " + end.id);
+	console.log("start " + start[0].id);
+	console.log("end " + end[0].id);
 
 	//define the start coordinate and end co-ordinate
 	var linedata =
