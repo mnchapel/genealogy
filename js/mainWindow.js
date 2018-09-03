@@ -1,7 +1,7 @@
 var boxWidth = 100,
     boxHeight = 40;
 
-console.log(treeData);
+console.log(treeData[0]);
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
@@ -24,7 +24,7 @@ var tree = d3.layout.tree()
   .separation(function(){ return 1.; })
   .children(function(d){ return d.parents; });
 
-var nodes = tree.nodes(treeData);
+var nodes = tree.nodes(treeData[0]);
 
 
 
@@ -47,7 +47,7 @@ function flatten(root)
 
 
 
-var allNodes = flatten(treeData);
+var allNodes = flatten(treeData[0]);
 
 
 
