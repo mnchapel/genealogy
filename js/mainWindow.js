@@ -104,7 +104,7 @@ node.append("text")
 
 // Draw the spouse lines
 svg.selectAll(".spouseLine")
-	.data(spouseDataJson[0])
+	.data(spouseDataJson)
 	.enter()
 	.append("path")
 	.attr("class", "spouseLine")
