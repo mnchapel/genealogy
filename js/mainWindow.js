@@ -3,6 +3,8 @@ var boxWidth = 100,
 
 console.log(treeData);
 
+treeDataJson = JSON.parse(treeData);
+
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
@@ -24,7 +26,7 @@ var tree = d3.layout.tree()
   .separation(function(){ return 1.; })
   .children(function(d){ return d.parents; });
 
-var nodes = tree.nodes(treeData[0]);
+var nodes = tree.nodes(treeDataJson[0]);
 
 
 
@@ -47,7 +49,7 @@ function flatten(root)
 
 
 
-var allNodes = flatten(treeData[0]);
+var allNodes = flatten(treeDataJson[0]);
 
 
 
