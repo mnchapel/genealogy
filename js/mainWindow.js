@@ -24,6 +24,31 @@ var tree = d3.layout.tree()
 
 var nodes = tree.nodes(treeData);
 
+
+
+function flatten(root)
+{
+	var n = [], i = 0;
+
+	function recurse(node)
+	{
+		console.log("node name: " + node.name);
+	    if(node.parents)
+		node.parents.forEach(recurse);
+	    n.push(node);
+	}
+
+	recurse(root);
+
+	return n;
+}
+
+
+
+var allNodes = flatten(treeData[0]);
+
+
+
 // Style links (edges)
 /*svg.selectAll("path.link")
 	.data(links)
