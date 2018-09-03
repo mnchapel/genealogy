@@ -44,6 +44,7 @@ function flatten(root)
 	    if(node.parents)
 		node.parents.forEach(recurse);
 	    n.push(node);
+		console.log("node " + node.id + " " + node.firstname);
 	}
 
 	recurse(root);
@@ -116,7 +117,7 @@ function spouseLine(d, i)
 	//start point
 	var start = allNodes.filter(function (v)
 	{
-		if (d.source.id == v.id)
+		if(d.source.id == v.id)
 			return true;
 		else
 			return false;
@@ -125,7 +126,7 @@ function spouseLine(d, i)
 	//end point
 	var end = allNodes.filter(function (v)
 	{
-		if (d.target.id == v.id)
+		if(d.target.id == v.id)
 			return true;
 		else
 			return false;
