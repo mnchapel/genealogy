@@ -36,7 +36,6 @@ function flatten(root)
 
 	function recurse(node)
 	{
-		console.log("node name: " + node.name);
 	    if(node.parents)
 		node.parents.forEach(recurse);
 	    n.push(node);
@@ -82,13 +81,21 @@ node.append("image")
 			return "";
 	});
 	
-// Draw the person's name and position it inside the box
+// Draw the person's firstname and position it inside the box
 node.append("text")
 	.attr("dx", 0)
 	.attr("dy", 0)
 	.attr("text-anchor", "middle")
-	.attr('class', 'name')
-	.text(function(d) { return d.name; });
+	.attr('class', 'firstname')
+	.text(function(d) { return d.firstname; });
+
+// Draw the person's lastname and position it inside the box
+node.append("text")
+	.attr("dx", 0)
+	.attr("dy", 10)
+	.attr("text-anchor", "middle")
+	.attr('class', 'lastname')
+	.text(function(d) { return d.lastname; });
     
 /**
  * Custom path function that creates straight connecting lines.
