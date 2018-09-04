@@ -203,7 +203,7 @@ function famillyLine(d, i)
 	{
 		x: start[0].x,
 		y: start[0].y+75+ny
-	},
+	}/*,
 	{
 		x: end[0].x,
 		y: start[0].y+75+ny
@@ -211,7 +211,7 @@ function famillyLine(d, i)
 	{
 		x: end[0].x,
 		y: end[0].y-75
-	}];
+	}*/];
 
 	var fun = d3.svg.line().x(function(d){ return d.x; })
 				.y(function(d){ return d.y; })
