@@ -46,6 +46,10 @@ svg{
 	fill: white
 }
 
+.dates{
+	fill: #857e87
+}
+
 .spouseLine{
 	fill: none;
 	stroke: #d8d1c1;

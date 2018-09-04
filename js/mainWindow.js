@@ -124,7 +124,7 @@ node.append("text")
 	.attr("dx", 0)
 	.attr("dy", 40)
 	.attr("text-anchor", "middle")
-	.attr('class', 'lastname')
+	.attr('class', 'dates')
 	.text(function(d)
 	{
 		var dates;
