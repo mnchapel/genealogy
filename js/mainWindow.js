@@ -206,7 +206,7 @@ function famillyLine(d, i)
 	},
 	{
 		x: end[0].x,
-		y: end[0].y+75+ny
+		y: start[0].y+75+ny
 	},
 	{
 		x: end[0].x,
