@@ -14,10 +14,8 @@ svg{
   font: 14px sans-serif;
 }
 
-.link{
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
+.slider{
+  background-color: #808080;
 }
 
 .circle{
@@ -26,16 +24,6 @@ svg{
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-}
-
-.blue{
-	background:#8db2be;
-	border-color:#8db2be
-}
-
-.pink{
-	background:#e78a91;
-	border-color:#e78a91
 }
 
 .firstname{
