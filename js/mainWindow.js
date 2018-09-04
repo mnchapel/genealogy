@@ -5,8 +5,6 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
-console.log(treeData);
-
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
@@ -56,14 +54,6 @@ function flatten(root)
 
 var allNodes = flatten(treeDataJson[0]);
 
-
-
-// Style links (edges)
-/*svg.selectAll("path.link")
-	.data(links)
-	.enter().append("path")
-	.attr("class", "link")
-	.attr("d", elbow);*/
 
 // Style nodes    
 var node = svg.selectAll("g.person")
@@ -131,7 +121,6 @@ node.append("text")
 		if(d.hidden)
 			return "";
 
-		console.log("date of " + d.id + " " + d.firstname);
 		var dates;
 
 		birthDateSplitted = d.birthDate.split(" ");
@@ -169,9 +158,9 @@ svg.selectAll(".famillyLine")
 	.attr("d", famillyLine);
 
 
-console.log("add on click");
+console.log("add on click on image");
 // Add click event on hexagons
-svg.selectAll(".hexagon")
+svg.selectAll("image.hexagon")
 	.on("click", function()
 	{
 		var slider = $('#slider').slideReveal();
