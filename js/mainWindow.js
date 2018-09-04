@@ -22,7 +22,7 @@ var svg = d3.select("body").append("svg")
 	.append('g')
 	.attr("transform", "translate(150,200)");
 
-var nodeWidth  = 200;
+var nodeWidth  = 220;
 var nodeHeight = 175;
 
 var tree = d3.layout.tree()
@@ -91,7 +91,7 @@ node.append("image")
 node.append("image")
 	.attr("xlink:href", "img/banner.png")
 	.attr("x", -100)
-	.attr("y", +40)
+	.attr("y", +30)
 	.attr("width", 200)
 	.attr("display", function(d)
 	{
