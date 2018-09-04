@@ -122,7 +122,7 @@ node.append("text")
 // Draw the person's birthDate-deathDate and position it inside the box
 node.append("text")
 	.attr("dx", 0)
-	.attr("dy", 40)
+	.attr("dy", 50)
 	.attr("text-anchor", "middle")
 	.attr('class', 'dates')
 	.text(function(d)
@@ -130,6 +130,7 @@ node.append("text")
 		if(d.hidden)
 			return "";
 
+		console.log("date of " + d.id + " " + d.firstname);
 		var dates;
 
 		birthDateSplitted = d.birthDate.split(" ");
