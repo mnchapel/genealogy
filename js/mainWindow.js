@@ -127,6 +127,9 @@ node.append("text")
 	.attr('class', 'dates')
 	.text(function(d)
 	{
+		if(d.hidden)
+			return "";
+
 		var dates;
 
 		birthDateSplitted = d.birthDate.split(" ");
