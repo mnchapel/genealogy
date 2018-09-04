@@ -169,6 +169,7 @@ svg.selectAll(".famillyLine")
 	.attr("d", famillyLine);
 
 
+console.log("add on click");
 // Add click event on hexagons
 svg.selectAll(".hexagon")
 	.on("click", function()
