@@ -110,7 +110,7 @@ svg.selectAll(".spouseLine")
 	.enter()
 	.append("path")
 	.attr("class", "spouseLine")
-	.attr("d", famillyLine);
+	.attr("d", spouseLine);
 
 
 
@@ -121,7 +121,7 @@ svg.selectAll(".famillyLine")
 	.enter()
 	.append("path")
 	.attr("class", "famillyLine")
-	.attr("d", spouseLine);
+	.attr("d", famillyLine);
 
 
 
