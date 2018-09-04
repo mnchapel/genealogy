@@ -5,6 +5,8 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
+console.log(treeDataJson);
+
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
