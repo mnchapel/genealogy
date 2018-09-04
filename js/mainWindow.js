@@ -203,11 +203,11 @@ function famillyLine(d, i)
 	{
 		x: start[0].x,
 		y: start[0].y+75+ny
-	}/*,
+	},
 	{
 		x: end[0].x,
 		y: start[0].y+75+ny
-	},
+	}/*,
 	{
 		x: end[0].x,
 		y: end[0].y-75
