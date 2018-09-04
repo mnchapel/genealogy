@@ -1,11 +1,10 @@
 var boxWidth = 100,
     boxHeight = 40;
 
+var treeDataJson    = JSON.parse(treeData);
+var spouseDataJson  = JSON.parse(spouseDataString);
+var famillyDataJson = JSON.parse(famillyDataString);
 
-var spouseDataJson;
-var treeDataJson = JSON.parse(treeData);
-
-var spouseDataJson = JSON.parse(spouseDataString);
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
@@ -71,17 +70,6 @@ var node = svg.selectAll("g.person")
 
 
 
-
-// Draw the spouse lines
-svg.selectAll(".spouseLine")
-	.data(spouseDataJson)
-	.enter()
-	.append("path")
-	.attr("class", "spouseLine")
-	.attr("d", spouseLine);
-
-
-
 // Draw the hexagon
 node.append("image")
 	.attr("xlink:href", function(d){ if(d.sex == "M") return "img/hexagon_blue.png"; return "img/hexagon_pink.png"; })
@@ -114,6 +102,31 @@ node.append("text")
 	.text(function(d) { return d.lastname; });
 
 
+
+
+// Draw the spouse lines
+svg.selectAll(".spouseLine")
+	.data(spouseDataJson)
+	.enter()
+	.append("path")
+	.attr("class", "spouseLine")
+	.attr("d", famillyLine);
+
+
+
+
+// Draw the familly lines
+svg.selectAll(".famillyLine")
+	.data(famillyDataJson)
+	.enter()
+	.append("path")
+	.attr("class", "famillyLine")
+	.attr("d", spouseLine);
+
+
+
+
+
 function spouseLine(d, i)
 {
 	//start point
@@ -143,6 +156,61 @@ function spouseLine(d, i)
 	{
 		x: end[0].x-62,
 		y: end[0].y
+	}];
+
+	var fun = d3.svg.line().x(function(d){ return d.x; })
+				.y(function(d){ return d.y; })
+				.interpolate("linear");
+
+	return fun(linedata);
+}
+
+
+
+
+
+
+
+function famillyLine(d, i)
+{
+	//start point: the child
+	var start = allNodes.filter(function(v)
+	{
+		if(d.source.id == v.id)
+			return true;
+		else
+			return false;
+	});
+
+	//end point: the parents
+	var end = allNodes.filter(function(v)
+	{
+		if(d.target.id == v.id)
+			return true;
+		else
+			return false;
+	});
+
+	var diff = end[0].y - start[0].y - (75*2);
+	var ny = diff * 0.40;
+
+	//define the start coordinate and end co-ordinate
+	var linedata =
+	[{
+		x: start[0].x,
+		y: start[0].y+75
+	},
+	{
+		x: start[0].x,
+		y: start[0].y+75+ny
+	},
+	{
+		x: end[0].x,
+		y: end[0].y+75+ny
+	},
+	{
+		x: end[0].x,
+		y: end[0].y-75
 	}];
 
 	var fun = d3.svg.line().x(function(d){ return d.x; })

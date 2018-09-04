@@ -15,7 +15,8 @@
 			encrypted = await readFile("data/treeData.asc");
 			await decrypt(encrypted, password);
 			
-			spouseDataString = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json");
+			spouseDataString  = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json");
+			famillyDataString = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/famillyData.json");
 
 			// TODO add test on the password
 			document.getElementById("content").innerHTML = "";
