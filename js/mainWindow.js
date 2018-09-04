@@ -19,7 +19,6 @@ var svg = d3.select("body").append("svg")
 	.attr("width", "100%")
 	.attr("height", "100%")
 	.attr("position", "absolute")
-	.attr("z-index", "-1")
 	.call(zoom)
 	.append("g")
 	.attr("transform", "translate(150,200)");
