@@ -39,8 +39,7 @@ function flatten(root)
 	{
 	    if(node.parents)
 		node.parents.forEach(recurse);
-	    n.push(node);
-		console.log("node " + node.id + " " + node.firstname);
+	    n.push(node);	
 	}
 
 	recurse(root);
@@ -77,6 +76,20 @@ node.append("image")
 	.attr("y", -75)
 	.attr("height", 150)
 	.attr("width", 150)
+	.attr("display", function(d)
+	{
+		if(d.hidden)
+			return "none";
+		else
+			return "";
+	});
+
+// Draw the banner
+node.append("image")
+	.attr("xlink:href", "img/banner.png")
+	.attr("x", -100)
+	.attr("y", +50)
+	.attr("width", 200)
 	.attr("display", function(d)
 	{
 		if(d.hidden)
