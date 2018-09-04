@@ -48,5 +48,6 @@ svg{
 
 .spouseLine{
 	fill: none;
-	stroke: #d8d1c1
+	stroke: #d8d1c1;
+	stroke-width: 5
 }
