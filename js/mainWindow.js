@@ -55,12 +55,18 @@ function flatten(root)
 var allNodes = flatten(treeDataJson[0]);
 
 
+console.log("add on click on person");
 // Style nodes    
 var node = svg.selectAll("g.person")
 	.data(nodes)
 	.enter().append("g")
 	.attr("class", "person")
-	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+	.on("click", function()
+	{
+		var slider = $('#slider').slideReveal();
+		slider.slideReveal("show");
+	});;
 
 
 
@@ -158,14 +164,6 @@ svg.selectAll(".famillyLine")
 	.attr("d", famillyLine);
 
 
-console.log("add on click on image");
-// Add click event on hexagons
-svg.selectAll("image.hexagon")
-	.on("click", function()
-	{
-		var slider = $('#slider').slideReveal();
-		slider.slideReveal("show");
-	});
 
 
 
