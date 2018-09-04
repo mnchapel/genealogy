@@ -22,8 +22,11 @@ var svg = d3.select("body").append("svg")
 	.append('g')
 	.attr("transform", "translate(150,200)");
 
+var nodeWidth  = 200;
+var nodeHeight = 175;
+
 var tree = d3.layout.tree()
-  .nodeSize([175, 175])
+  .nodeSize([nodeWidth, nodeHeight])
   .separation(function(a, b){ if (a.remove || b.remove) return 0.5; return 1.; })
   .children(function(d){ return d.parents; });
 
@@ -88,7 +91,7 @@ node.append("image")
 node.append("image")
 	.attr("xlink:href", "img/banner.png")
 	.attr("x", -100)
-	.attr("y", +50)
+	.attr("y", +40)
 	.attr("width", 200)
 	.attr("display", function(d)
 	{
