@@ -5,7 +5,7 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
-console.log(treeDataJson[0]);
+console.log(treeData);
 
 
 // Setup zoom and pan
