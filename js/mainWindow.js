@@ -24,7 +24,7 @@ var svg = d3.select("body").append("svg")
 
 var tree = d3.layout.tree()
   .nodeSize([175, 175])
-  .separation(function(){ if (a.remove || b.remove) return 0.5; return 1.; })
+  .separation(function(a, b){ if (a.remove || b.remove) return 0.5; return 1.; })
   .children(function(d){ return d.parents; });
 
 var nodes = tree.nodes(treeDataJson[0]);
