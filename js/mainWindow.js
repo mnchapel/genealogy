@@ -76,6 +76,7 @@ var node = svg.selectAll("g.person")
 
 // Draw the hexagon
 node.append("image")
+	.attr("class", "hexagon")
 	.attr("xlink:href", function(d){ if(d.sex == "M") return "img/hexagon_blue.png"; return "img/hexagon_pink.png"; })
 	.attr("x", -75)
 	.attr("y", -75)
@@ -116,7 +117,7 @@ node.append("text")
 	.attr("dx", 0)
 	.attr("dy", 10)
 	.attr("text-anchor", "middle")
-	.attr('class', 'lastname')
+	.attr("class", "lastname")
 	.text(function(d) { return d.lastname; });
 
 // Draw the person's birthDate-deathDate and position it inside the box
@@ -166,6 +167,15 @@ svg.selectAll(".famillyLine")
 	.append("path")
 	.attr("class", "famillyLine")
 	.attr("d", famillyLine);
+
+
+// Add click event on hexagons
+svg.selectAll(".hexagon")
+	.on("click", function()
+	{
+		var slider = $('#slider').slideReveal();
+		slider.slideReveal("show");
+	});
 
 
 
