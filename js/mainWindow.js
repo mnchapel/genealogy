@@ -69,6 +69,19 @@ var node = svg.selectAll("g.person")
 	.attr("class", "person")
 	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
+
+
+
+// Draw the spouse lines
+svg.selectAll(".spouseLine")
+	.data(spouseDataJson)
+	.enter()
+	.append("path")
+	.attr("class", "spouseLine")
+	.attr("d", spouseLine);
+
+
+
 // Draw the hexagon
 node.append("image")
 	.attr("xlink:href", function(d){ if(d.sex == "M") return "img/hexagon_blue.png"; return "img/hexagon_pink.png"; })
@@ -100,14 +113,6 @@ node.append("text")
 	.attr('class', 'lastname')
 	.text(function(d) { return d.lastname; });
 
-// Draw the spouse lines
-svg.selectAll(".spouseLine")
-	.data(spouseDataJson)
-	.enter()
-	.append("path")
-	.attr("class", "spouseLine")
-	.attr("d", spouseLine);
-
 
 function spouseLine(d, i)
 {
@@ -132,11 +137,11 @@ function spouseLine(d, i)
 	//define the start coordinate and end co-ordinate
 	var linedata =
 	[{
-		x: start[0].x+75,
+		x: start[0].x,
 		y: start[0].y
 	},
 	{
-		x: end[0].x-75,
+		x: end[0].x,
 		y: end[0].y
 	}];
 
