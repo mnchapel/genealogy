@@ -132,11 +132,11 @@ function spouseLine(d, i)
 	//define the start coordinate and end co-ordinate
 	var linedata =
 	[{
-		x: start[0].x,
+		x: start[0].x+75,
 		y: start[0].y
 	},
 	{
-		x: end[0].x,
+		x: end[0].x-75,
 		y: end[0].y
 	}];
 
