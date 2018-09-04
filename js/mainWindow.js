@@ -25,7 +25,7 @@ var svg = d3.select("body").append("svg")
 	.attr("transform", "translate(150,200)");
 
 var nodeWidth  = 220;
-var nodeHeight = 175;
+var nodeHeight = 200;
 
 var tree = d3.layout.tree()
   .nodeSize([nodeWidth, nodeHeight])
