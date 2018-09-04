@@ -119,6 +119,28 @@ node.append("text")
 	.attr('class', 'lastname')
 	.text(function(d) { return d.lastname; });
 
+// Draw the person's birthDate-deathDate and position it inside the box
+node.append("text")
+	.attr("dx", 0)
+	.attr("dy", 40)
+	.attr("text-anchor", "middle")
+	.attr('class', 'lastname')
+	.text(function(d)
+	{
+		var dates;
+
+		birthDateSplitted = d.birthDate.split(" ");
+		dates = birthDateSplitted[2];
+
+		if(d.deathDate)
+		{
+			deathDateSplitted = d.deathDate.split(" ");
+			dates = dates + " - " + deathDateSplitted[2];
+		}
+
+		return dates;
+	});
+
 
 
 
