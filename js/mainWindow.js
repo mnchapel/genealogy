@@ -299,7 +299,7 @@ function spouseLine(d, i)
 	}];
 
 	var fun = d3.svg.line().x(function(d){ return d.x; })
-				.y(function(d){ return d.y; })
+				.y(function(d){ return -d.y; })
 				.interpolate("linear");
 
 	return fun(linedata);
