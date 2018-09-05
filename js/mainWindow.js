@@ -5,16 +5,28 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
+
+
+
+
+
 // Create the slider
 console.log("Create the slider");
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.classList.add("slider");
+var divFirstLastName = document.createElement("div");
+divFirstLastName.id = "firstLastName";
+divSlider.appendChild(divFirstLastName);
+
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
 // Hide the slider
 var slider = $('#slider').slideReveal();
 console.log("hide the slider");
+
+
+
 
 
 
@@ -76,8 +88,9 @@ var node = svg.selectAll("g.person")
 	.enter().append("g")
 	.attr("class", "person")
 	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-	.on("click", function()
+	.on("click", function(d)
 	{
+		console.lgo("d: " + d);
 		var slider = $('#slider').slideReveal();
 		slider.slideReveal("show");
 	});;
