@@ -10,17 +10,21 @@ var famillyDataJson = JSON.parse(famillyDataString);
 
 
 
-// Create the slider
-console.log("Create the slider");
+// Create the slider div
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.classList.add("slider");
+// Create the firstLastName div
 var divFirstLastName = document.createElement("div");
 divFirstLastName.id = "firstLastName";
 divFirstLastName.classList.add("whitePencil");
 divFirstLastName.classList.add("center");
 divSlider.appendChild(divFirstLastName);
-
+// Create the birth image
+var birthImg = document.createElement("img");
+birthImg.setAttribute("src", "img/stroller.png");
+divSlider.appendChild(birthImg);
+// Add the slider to the document
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
 // Hide the slider
