@@ -91,7 +91,7 @@ var node = svg.selectAll("g.person")
 	.on("click", function(d)
 	{
 		// Fill the div
-		('#firstLastName').html(d.firstname + " " + d.lastname);
+		$('#firstLastName').html(d.firstname + " " + d.lastname);
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
