@@ -338,15 +338,15 @@ function famillyLine(d, i)
 	var linedata =
 	[{
 		x: start[0].x,
-		y: start[0].y-75
+		y: start[0].y+75
 	},
 	{
 		x: start[0].x,
-		y: start[0].y-75-ny
+		y: start[0].y+75+ny
 	},
 	{
 		x: end[0].x,
-		y: start[0].y-75-ny
+		y: start[0].y+75+ny
 	},
 	{
 		x: end[0].x,
