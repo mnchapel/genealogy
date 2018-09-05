@@ -17,7 +17,12 @@ svg{
 
 .slider{
 	background-color: #808080;
+	width: 350;
 	z-index: 2;
+	padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-left: 20px;
 }
 
 .circle{
@@ -33,6 +38,10 @@ svg{
 }
 
 .lastname{
+	fill: white
+}
+
+.whitePencil{
 	fill: white
 }
 
