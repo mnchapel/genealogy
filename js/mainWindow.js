@@ -140,6 +140,8 @@ node.append("text")
 	.attr('class', 'firstname')
 	.text(function(d)
 	{
+		console.log("d.firstname " + d.firstname);
+		var firstname = d.firstname.split(" ");
 		return d.firstname;
 	});
 
