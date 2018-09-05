@@ -37,8 +37,27 @@ birthPlaceDiv.id = "birthPlace";
 birthPlaceDiv.classList.add("whitePencil");
 birthPlaceDiv.classList.add("center");
 divSlider.appendChild(birthPlaceDiv);
+// Create the union image
+var unionImg = document.createElement("img");
+unionImg.id = "unionImg";
+unionImg.classList.add("center-img");
+unionImg.setAttribute("src", "img/rings.png");
+divSlider.appendChild(unionImg);
+// Create the union date div
+var unionDateDiv = document.createElement("div");
+unionDateDiv.id = "unionDate";
+unionDateDiv.classList.add("whitePencil");
+unionDateDiv.classList.add("center");
+divSlider.appendChild(unionDateDiv);
+// Create the union place div
+var unionPlaceDiv = document.createElement("div");
+unionPlaceDiv.id = "unionPlace";
+unionPlaceDiv.classList.add("whitePencil");
+unionPlaceDiv.classList.add("center");
+divSlider.appendChild(unionPlaceDiv);
 // Create the death image
 var deathImg = document.createElement("img");
+deathImg.id = "deathImg";
 deathImg.classList.add("center-img");
 deathImg.setAttribute("src", "img/tombstone.png");
 divSlider.appendChild(deathImg);
@@ -129,9 +148,13 @@ var node = svg.selectAll("g.person")
 		// Fill the slider
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
-		if(d.birthPlace) $('#birthPlace').html(d.birthPlace);
-		if(d.deathDate) $('#deathDate').html(d.deathDate);
-		if(d.deathPlace) $('#deathPlace').html(d.deathPlace);
+		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
+		if(!d.unionDate && !d.unionPlace) $('#unionImg').hide();
+		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
+		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionDate)   } else $("#unionPlace").hide();
+		if(!d.deathDate && !d.deathPlace) $('#deathImg').hide();
+		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathPlace)   } else $("#deathDate").hide();
+		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
