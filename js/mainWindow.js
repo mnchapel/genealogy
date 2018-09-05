@@ -22,6 +22,7 @@ divFirstLastName.classList.add("center");
 divSlider.appendChild(divFirstLastName);
 // Create the birth image
 var birthImg = document.createElement("img");
+birthImg.classList.add("center-img");
 birthImg.setAttribute("src", "img/stroller.png");
 divSlider.appendChild(birthImg);
 // Add the slider to the document
