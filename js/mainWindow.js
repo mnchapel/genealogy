@@ -41,7 +41,7 @@ divSlider.appendChild(birthPlaceDiv);
 var unionImg = document.createElement("img");
 unionImg.id = "unionImg";
 unionImg.classList.add("center-img");
-unionImg.setAttribute("src", "img/rings.png");
+unionImg.setAttribute("src", "img/wedding.png");
 divSlider.appendChild(unionImg);
 // Create the union date div
 var unionDateDiv = document.createElement("div");
@@ -100,7 +100,7 @@ var svg = d3.select("body").append("svg")
 	.attr("position", "absolute")
 	.call(zoom)
 	.append("g")
-	.attr("transform", "translate(150,200)");
+	.attr("transform", "translate(150,-200)");
 
 var nodeWidth  = 220;
 var nodeHeight = 200;
