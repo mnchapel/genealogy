@@ -140,11 +140,7 @@ node.append("text")
 	.attr('class', 'firstname')
 	.text(function(d)
 	{
-		console.log("firstname " + d.firstname);
-		firstnameSplitted = d.firstname.split(" ");
-		firstname = firstnameSplitted[0];
-
-		return firstname;
+		return d.firstname;
 	});
 
 // Draw the person's lastname and position it inside the box
