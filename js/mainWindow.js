@@ -5,9 +5,6 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
-// Hide the slider
-$("#slider").slideReveal("hide");
-
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
