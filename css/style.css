@@ -25,12 +25,9 @@ svg{
     padding-left: 20px;
 }
 
-.circle{
-  height: 100px;
-  width: 100px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
+.center{
+	width: 100%;
+	text-align: center;
 }
 
 .firstname{

@@ -18,6 +18,7 @@ divSlider.classList.add("slider");
 var divFirstLastName = document.createElement("div");
 divFirstLastName.id = "firstLastName";
 divFirstLastName.classList.add("whitePencil");
+divFirstLastName.classList.add("center");
 divSlider.appendChild(divFirstLastName);
 
 document.getElementsByTagName("body")[0].appendChild(divSlider);
