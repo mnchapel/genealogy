@@ -91,7 +91,7 @@ var zoom = d3.behavior.zoom()
 	svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
 	})
 	// Offset so that first pan and zoom does not jump back to the origin
-	.translate([150, 200]);
+	.translate([-300, 1000]);
 
 
 var svg = d3.select("body").append("svg")
@@ -100,7 +100,7 @@ var svg = d3.select("body").append("svg")
 	.attr("position", "absolute")
 	.call(zoom)
 	.append("g")
-	.attr("transform", "translate(-150,400)");
+	.attr("transform", "translate(-300,1000)");
 
 var nodeWidth  = 220;
 var nodeHeight = 200;
