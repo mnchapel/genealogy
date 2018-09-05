@@ -5,10 +5,13 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
-$(document).ready(function()
-{
-     $('#slider').slideReveal("hide");
-});
+// Create the slider
+var divSlider = document.createElement("div");
+divSlider.id = "slider";
+divSlider.class = "slider";
+$('#slider').slideReveal("hide");
+
+
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
