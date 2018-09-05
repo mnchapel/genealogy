@@ -37,6 +37,23 @@ birthPlaceDiv.id = "birthPlace";
 birthPlaceDiv.classList.add("whitePencil");
 birthPlaceDiv.classList.add("center");
 divSlider.appendChild(birthPlaceDiv);
+// Create the death image
+var deathImg = document.createElement("img");
+deathImg.classList.add("center-img");
+deathImg.setAttribute("src", "img/tombstone.png");
+divSlider.appendChild(deathImg);
+// Create the death date div
+var deathDateDiv = document.createElement("div");
+deathDateDiv.id = "deathDate";
+deathDateDiv.classList.add("whitePencil");
+deathDateDiv.classList.add("center");
+divSlider.appendChild(deathDateDiv);
+// Create the death place div
+var deathPlaceDiv = document.createElement("div");
+deathPlaceDiv.id = "deathPlace";
+deathPlaceDiv.classList.add("whitePencil");
+deathPlaceDiv.classList.add("center");
+divSlider.appendChild(deathPlaceDiv);
 // Add the slider to the document
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
@@ -113,6 +130,8 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) $('#birthPlace').html(d.birthPlace);
+		if(d.deathDate) $('#deathDate').html(d.deathDate);
+		if(d.deathPlace) $('#deathPlace').html(d.deathPlace);
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
