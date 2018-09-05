@@ -78,7 +78,6 @@ document.getElementsByTagName("body")[0].appendChild(divSlider);
 
 // Hide the slider
 var slider = $('#slider').slideReveal();
-console.log("hide the slider");
 
 
 
@@ -136,7 +135,6 @@ function flatten(root)
 var allNodes = flatten(treeDataJson[0]);
 
 
-console.log("add on click on person");
 // Style nodes    
 var node = svg.selectAll("g.person")
 	.data(nodes)
@@ -149,11 +147,11 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
-		if(!d.unionDate && !d.unionPlace) $('#unionImg').hide();
+		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
 		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
-		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionDate)   } else $("#unionPlace").hide();
-		if(!d.deathDate && !d.deathPlace) $('#deathImg').hide();
-		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathPlace)   } else $("#deathDate").hide();
+		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace)   } else $("#unionPlace").hide();
+		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide(); } else { $('#deathImg').show(); }
+		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 
 		// Show the slider
