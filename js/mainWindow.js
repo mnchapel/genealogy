@@ -5,6 +5,8 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
+// Hide the slider
+$("#slider").slideReveal("hide");
 
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
@@ -14,6 +16,7 @@ var zoom = d3.behavior.zoom()
 	})
 	// Offset so that first pan and zoom does not jump back to the origin
 	.translate([150, 200]);
+
 
 var svg = d3.select("body").append("svg")
 	.attr("width", "100%")
