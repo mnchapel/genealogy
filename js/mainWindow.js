@@ -100,7 +100,7 @@ var svg = d3.select("body").append("svg")
 	.attr("position", "absolute")
 	.call(zoom)
 	.append("g")
-	.attr("transform", "translate(150,-200)");
+	.attr("transform", "translate(-150,400)");
 
 var nodeWidth  = 220;
 var nodeHeight = 200;
