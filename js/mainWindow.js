@@ -10,8 +10,11 @@ console.log("Create the slider");
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.class = "slider";
+document.getElementsByTagName("body")[0].appendChild(divSlider);
+
+// Hide the slider
 var slider = $('#slider').slideReveal();
-console.log("slider " + slider);
+console.log("hide the slider");
 
 
 
