@@ -6,6 +6,7 @@ var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
 // Create the slider
+console.log("Create the slider");
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.class = "slider";
