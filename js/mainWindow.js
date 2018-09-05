@@ -28,13 +28,13 @@ divSlider.appendChild(birthImg);
 // Create the birth date div
 var birthDateDiv = document.createElement("div");
 birthDateDiv.id = "birthDate";
-birthDateDiv.classList.add("white-pencil");
+birthDateDiv.classList.add("whitePencil");
 birthDateDiv.classList.add("center");
 divSlider.appendChild(birthDateDiv);
 // Create the birth place div
 var birthPlaceDiv = document.createElement("div");
 birthPlaceDiv.id = "birthPlace";
-birthPlaceDiv.classList.add("white-pencil");
+birthPlaceDiv.classList.add("whitePencil");
 birthPlaceDiv.classList.add("center");
 divSlider.appendChild(birthPlaceDiv);
 // Add the slider to the document
