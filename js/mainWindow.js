@@ -139,7 +139,8 @@ node.append("text")
 	.attr("text-anchor", "middle")
 	.attr('class', 'firstname')
 	.text(function(d)
-	{		
+	{
+		console.log("firstname " + d.firstname);
 		firstnameSplitted = d.firstname.split(" ");
 		firstname = firstnameSplitted[0];
 
