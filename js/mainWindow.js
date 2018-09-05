@@ -90,7 +90,7 @@ var node = svg.selectAll("g.person")
 	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
 	.on("click", function(d)
 	{
-		console.log("d: " + d);
+		console.log("d: " + d.firstname);
 		var slider = $('#slider').slideReveal();
 		slider.slideReveal("show");
 	});;
