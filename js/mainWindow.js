@@ -9,7 +9,7 @@ var famillyDataJson = JSON.parse(famillyDataString);
 console.log("Create the slider");
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
-divSlider.class = "slider";
+divSlider.classList.add("slider");
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
 // Hide the slider
