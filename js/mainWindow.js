@@ -25,6 +25,18 @@ var birthImg = document.createElement("img");
 birthImg.classList.add("center-img");
 birthImg.setAttribute("src", "img/stroller.png");
 divSlider.appendChild(birthImg);
+// Create the birth date div
+var birthDateDiv = document.createElement("div");
+birthDateDiv.id = "birthDate";
+birthDateDiv.classList.add("white-pencil");
+birthDateDiv.classList.add("center");
+divSlider.appendChild(birthDateDiv);
+// Create the birth place div
+var birthPlaceDiv = document.createElement("div");
+birthPlaceDiv.id = "birthPlace";
+birthPlaceDiv.classList.add("white-pencil");
+birthPlaceDiv.classList.add("center");
+divSlider.appendChild(birthPlaceDiv);
 // Add the slider to the document
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
@@ -97,8 +109,10 @@ var node = svg.selectAll("g.person")
 	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
 	.on("click", function(d)
 	{
-		// Fill the div
+		// Fill the slider
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
+		$('#birthDate').html(d.birthDate);
+		if(d.birthPlace) $('#birthPlace').html(d.birthPlace);
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
