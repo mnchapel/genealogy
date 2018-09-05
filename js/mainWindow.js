@@ -140,7 +140,7 @@ var node = svg.selectAll("g.person")
 	.data(nodes)
 	.enter().append("g")
 	.attr("class", "person")
-	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+	.attr("transform", function(d) { return "translate(" + d.x + "," + -d.y + ")"; })
 	.on("click", function(d)
 	{
 		// Fill the slider
