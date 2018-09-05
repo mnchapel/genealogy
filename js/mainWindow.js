@@ -10,7 +10,8 @@ console.log("Create the slider");
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.class = "slider";
-$('#slider').slideReveal("hide");
+var slider = $('#slider').slideReveal();
+console.log("slider " + slider);
 
 
 
