@@ -138,7 +138,13 @@ node.append("text")
 	.attr("dy", -10)
 	.attr("text-anchor", "middle")
 	.attr('class', 'firstname')
-	.text(function(d) { return d.firstname; });
+	.text(function(d)
+	{		
+		firstnameSplitted = d.firstname.split(" ");
+		firstname = firstnameSplitted[0];
+
+		return firstname;
+	});
 
 // Draw the person's lastname and position it inside the box
 node.append("text")
