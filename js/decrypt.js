@@ -9,6 +9,6 @@ async function decrypt(encrypted, password)
 
 	openpgp.decrypt(options).then(function(plainText)
 	{
-		treeData = plainText.data;
+		return plainText.data;
 	});
 }

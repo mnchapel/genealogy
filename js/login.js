@@ -3,7 +3,7 @@
 	$('#login').on('click', async function()
 	{
 		var output = document.getElementById("output");
-		var password = document.getElementById("password").value;
+		password = document.getElementById("password").value;
 
 		if(password == "")
 		{
@@ -12,8 +12,8 @@
 		}
 		else
 		{
-			encrypted = await readFile("data/treeData.asc");
-			await decrypt(encrypted, password);
+			var encrypted = await readFile("data/treeData.asc");
+			treeData = await decrypt(encrypted, password);
 			
 			spouseDataString  = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/spouseData.json");
 			famillyDataString = await readFile("https://raw.githubusercontent.com/mnchapel/genealogy/gh-pages/data/famillyData.json");
