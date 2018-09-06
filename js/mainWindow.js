@@ -135,6 +135,15 @@ var zoom = d3.behavior.zoom()
 	})
 	// Offset so that first pan and zoom does not jump back to the origin
 	.translate([-1000, 800]);
+	
+// Setup zoom and pan
+var zoomDoc = d3.behavior.zoom()
+	.scaleExtent([.1,1])
+	.on('zoom', function()
+	{
+		svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+	});
+
 
 
 var svg = d3.select("body").append("svg")
@@ -154,7 +163,7 @@ var svgDoc = d3.select("body").append("svg")
 	.attr("height", "100%")
 	.attr("position", "absolute")
 	.style("display", "none")
-	.call(zoom)
+	.call(zoomDoc)
 	.append("g");
 	
 	
