@@ -122,6 +122,7 @@ svgDoc.style.display = "none";
 document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 
 
+console.log("test");
 var svgDoc = d3.select("body").append("svg")
 	.attr("class", "svgDoc")
 	.attr("width", "100%")
@@ -134,7 +135,7 @@ var svgDoc = d3.select("body").append("svg")
 
 async function showDocument(docName)
 {
-	svgDoc.style.display = "block";
+	//svgDoc.style.display = "block";
 	
 	var docPath = "data/doc/" + docName;
 	
