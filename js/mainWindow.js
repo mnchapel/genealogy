@@ -163,9 +163,9 @@ var svgDoc = d3.select("body").append("svg")
 	.attr("width", "100%")
 	.attr("height", "100%")
 	.attr("position", "absolute")
+	.style("display", "none")
 	.call(zoom)
-	.append("g")
-	.style("display", "none");
+	.append("g");
 	
 	
 
