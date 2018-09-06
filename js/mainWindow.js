@@ -43,9 +43,9 @@ jobImg.id = "jobImg";
 jobImg.classList.add("center-img");
 jobImg.setAttribute("src", "img/office-briefcase.png");
 divSlider.appendChild(jobImg);
-// Create the job date div
+// Create the job div
 var jobDiv = document.createElement("div");
-jobDiv.id = "jobDiv";
+jobDiv.id = "job";
 jobDiv.classList.add("whitePencil");
 jobDiv.classList.add("center");
 divSlider.appendChild(jobDiv);
@@ -85,6 +85,18 @@ deathPlaceDiv.id = "deathPlace";
 deathPlaceDiv.classList.add("whitePencil");
 deathPlaceDiv.classList.add("center");
 divSlider.appendChild(deathPlaceDiv);
+// Create the note image
+var noteImg = document.createElement("img");
+noteImg.id = "deathImg";
+noteImg.classList.add("center-img");
+noteImg.setAttribute("src", "img/writing.png");
+divSlider.appendChild(noteImg);
+// Create the note div
+var noteDiv = document.createElement("div");
+noteDiv.id = "note";
+noteDiv.classList.add("whitePencil");
+noteDiv.classList.add("center");
+divSlider.appendChild(noteDiv);
 // Add the slider to the document
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 
@@ -159,13 +171,14 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
-		if(!d.job) { $('#jobImg').hide(); $('#jobDiv').hide(); } else { $('#jobImg').show(); $('#jobDiv').show(); $('#jobDiv').html(d.job); }
+		if(!d.job) { $('#jobImg').hide(); $('#job').hide(); } else { $('#jobImg').show(); $('#job').show(); $('#job').html(d.job); }
 		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
 		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
 		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace)   } else $("#unionPlace").hide();
 		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide(); } else { $('#deathImg').show(); }
 		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
+		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
