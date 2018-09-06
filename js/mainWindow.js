@@ -114,6 +114,7 @@ var slider = $('#slider').slideReveal();
 // Create svg doc
 var svgDoc = document.createElement("svg");
 svgDoc.id = "svgDoc";
+svgDoc.classList.add("svgDoc");
 svgDoc.setAttribute("width", "100%");
 svgDoc.setAttribute("height", "100%");
 svgDoc.style.display = "none";
