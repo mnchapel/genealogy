@@ -5,7 +5,7 @@ var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
 
-console.log(treeData);
+//console.log(treeData);
 
 
 
@@ -87,7 +87,7 @@ deathPlaceDiv.classList.add("center");
 divSlider.appendChild(deathPlaceDiv);
 // Create the note image
 var noteImg = document.createElement("img");
-noteImg.id = "deathImg";
+noteImg.id = "noteImg";
 noteImg.classList.add("center-img");
 noteImg.setAttribute("src", "img/writing.png");
 divSlider.appendChild(noteImg);
