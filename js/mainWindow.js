@@ -111,9 +111,22 @@ var slider = $('#slider').slideReveal();
 
 
 
-function showDocument(docName)
+// Create svg doc
+var svgDoc = document.createElement("svg");
+svgDoc.id = "svgDoc";
+svgDoc.setAttribute("width", "100%");
+svgDoc.setAttribute("height", "100%");
+// Add the svg to the document
+document.getElementByTagName("body")[0].appendChild(svgDoc);
+
+
+
+async function showDocument(docName)
 {
-	console.log("show " + docName);
+	var docPath = "data/doc/" + docName;
+	
+	var doc = readFile(docPath);
+	
 }
 
 
