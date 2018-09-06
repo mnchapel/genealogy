@@ -13,6 +13,7 @@ svg{
 
 .svgDoc{
 	background: #ffffff;
+	z-index: 3;
 }
 
 .person{
