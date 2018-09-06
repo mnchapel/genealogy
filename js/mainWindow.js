@@ -118,7 +118,7 @@ svgDoc.setAttribute("width", "100%");
 svgDoc.setAttribute("height", "100%");
 svgDoc.style.display = "none";
 // Add the svg to the document
-document.getElementByTagName("body")[0].appendChild(svgDoc);
+document.getElementsByTagName("body")[0].appendChild(svgDoc);
 
 
 
