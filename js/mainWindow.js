@@ -124,6 +124,8 @@ document.getElementsByTagName("body")[0].appendChild(svgDoc);
 
 async function showDocument(docName)
 {
+	svgDoc.style.display = "block";
+	
 	var docPath = "data/doc/" + docName;
 	
 	var doc = readFile(docPath);
