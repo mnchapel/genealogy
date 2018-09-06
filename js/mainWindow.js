@@ -148,6 +148,7 @@ var svg = d3.select("body").append("svg")
 
 console.log("test");
 var svgDoc = d3.select("body").append("svg")
+	.attr("id", "svgDoc")
 	.attr("class", "svgDoc")
 	.attr("width", "100%")
 	.attr("height", "100%")
@@ -161,7 +162,7 @@ var svgDoc = d3.select("body").append("svg")
 
 async function showDocument(docName)
 {
-	svgDoc.style("display", "block")
+	d3.select("#svgDoc").style("display", "block");
 	
 	var docPath = "data/doc/" + docName;	
 	var doc = readFile(docPath);
