@@ -7,8 +7,10 @@ async function decrypt(encrypted, password)
 		format: 'utf8'         		// output
 	};
 
-	await openpgp.decrypt(options).then(function(plainText)
+	var text = openpgp.decrypt(options).then(function(plainText)
 	{
 		return plainText.data;
 	});
+	
+	return text;
 }
