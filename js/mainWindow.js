@@ -122,17 +122,6 @@ svgDoc.style.display = "none";
 document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 
 
-async function showDocument(docName)
-{
-	//svgDoc.style.display = "block";
-	
-	var docPath = "data/doc/" + docName;
-	
-	var doc = readFile(docPath);
-	
-}
-
-
 
 
 
@@ -168,6 +157,19 @@ var svgDoc = d3.select("body").append("svg")
 	.append("g");
 	
 	
+
+
+async function showDocument(docName)
+{
+	svgDoc.style("display", "block")
+	
+	var docPath = "data/doc/" + docName;	
+	var doc = readFile(docPath);
+	
+}
+
+
+
 
 var nodeWidth  = 220;
 var nodeHeight = 200;
