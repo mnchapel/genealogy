@@ -177,7 +177,7 @@ async function showDocument(docName)
 	//var docEncrypted = readFile(docPath);
 	//var document = decrypt(docEncrypted, password);
 	
-	svgDoc.append("image")
+	svgDoc.append("img")
 	.attr("src", "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==")
 	.attr("width", 100)
 	.attr("height", 100);
