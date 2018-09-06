@@ -37,6 +37,12 @@ birthPlaceDiv.id = "birthPlace";
 birthPlaceDiv.classList.add("whitePencil");
 birthPlaceDiv.classList.add("center");
 divSlider.appendChild(birthPlaceDiv);
+// Create the birth look image
+var birthLookImg = document.createElement("img");
+birthLookImg.id = "birthLook",
+birthLookImg.classList.add("center-img-look");
+birthLookImg.setAttribute("src", "img/visible-opened-eye-interface-option.png");
+divSlider.appendChild(birthLookImg);
 // Create the job image
 var jobImg = document.createElement("img");
 jobImg.id = "jobImg";
@@ -171,6 +177,7 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
+		if(d.birthDoc) { $("#birthLook").show(); } else $("#birthPlace").hide();
 		if(!d.job) { $('#jobImg').hide(); $('#job').hide(); } else { $('#jobImg').show(); $('#job').show(); $('#job').html(d.job); }
 		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
 		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
