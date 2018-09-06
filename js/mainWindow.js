@@ -111,7 +111,7 @@ var slider = $('#slider').slideReveal();
 
 
 
-// Create svg doc
+/*// Create svg doc
 var svgDoc = document.createElement("svg");
 svgDoc.id = "svgDoc";
 svgDoc.classList.add("svgDoc");
@@ -119,8 +119,17 @@ svgDoc.setAttribute("width", "100%");
 svgDoc.setAttribute("height", "100%");
 svgDoc.style.display = "none";
 // Add the svg to the document
-document.getElementsByTagName("body")[0].appendChild(svgDoc);
+document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 
+
+var svgDoc = d3.select("body").append("svg")
+	.attr("class", "svgDoc")
+	.attr("width", "100%")
+	.attr("height", "100%")
+	.attr("position", "absolute")
+	.call(zoom)
+	.append("g")
+	.style("display", "none");
 
 
 async function showDocument(docName)
@@ -141,8 +150,9 @@ async function showDocument(docName)
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
-	.on('zoom', function(){
-	svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+	.on('zoom', function()
+	{
+		svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
 	})
 	// Offset so that first pan and zoom does not jump back to the origin
 	.translate([-1000, 800]);
