@@ -37,6 +37,18 @@ birthPlaceDiv.id = "birthPlace";
 birthPlaceDiv.classList.add("whitePencil");
 birthPlaceDiv.classList.add("center");
 divSlider.appendChild(birthPlaceDiv);
+// Create the job image
+var jobImg = document.createElement("img");
+jobImg.id = "jobImg";
+jobImg.classList.add("center-img");
+jobImg.setAttribute("src", "img/office-briefcase.png");
+divSlider.appendChild(jobImg);
+// Create the job date div
+var jobDiv = document.createElement("div");
+jobDiv.id = "jobDiv";
+jobDiv.classList.add("whitePencil");
+jobDiv.classList.add("center");
+divSlider.appendChild(jobDiv);
 // Create the union image
 var unionImg = document.createElement("img");
 unionImg.id = "unionImg";
@@ -147,6 +159,7 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
+		if(!d.job) { $('#jobImg').hide(); $('#jobDiv').hide(); } else { $('#jobImg').show(); $('#jobDiv').show(); $('#jobDiv').html(d.job); }
 		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
 		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
 		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace)   } else $("#unionPlace").hide();
