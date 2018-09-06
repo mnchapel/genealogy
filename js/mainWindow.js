@@ -122,16 +122,6 @@ svgDoc.style.display = "none";
 document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 
 
-console.log("test");
-var svgDoc = d3.select("body").append("svg")
-	.attr("class", "svgDoc")
-	.attr("width", "100%")
-	.attr("height", "100%")
-	.attr("position", "absolute")
-	.call(zoom)
-	.append("g");
-
-
 async function showDocument(docName)
 {
 	//svgDoc.style.display = "block";
@@ -165,6 +155,19 @@ var svg = d3.select("body").append("svg")
 	.call(zoom)
 	.append("g")
 	.attr("transform", "translate(-1000,800)");
+	
+
+console.log("test");
+var svgDoc = d3.select("body").append("svg")
+	.attr("class", "svgDoc")
+	.attr("width", "100%")
+	.attr("height", "100%")
+	.attr("position", "absolute")
+	.call(zoom)
+	.append("g")
+	.style("display", "none");
+	
+	
 
 var nodeWidth  = 220;
 var nodeHeight = 200;
