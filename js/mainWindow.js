@@ -1,11 +1,11 @@
 var boxWidth = 100,
     boxHeight = 40;
 
+console.log(treeData);
+
 var treeDataJson    = JSON.parse(treeData);
 var spouseDataJson  = JSON.parse(spouseDataString);
 var famillyDataJson = JSON.parse(famillyDataString);
-
-//console.log(treeData);
 
 
 
