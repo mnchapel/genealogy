@@ -175,8 +175,8 @@ async function showDocument(docName)
 	
 	var docPath = "data/doc/" + docName;	
 	var docEncrypted = await readFile(docPath);
+	console.log("docEncrypted "+ docEncrypted);
 	var data = await decrypt(docEncrypted, password);
-	//console.log("document "+ document);
 	
 	// TEST
 	/*var doc = "img/hexagon_pink.txt";
