@@ -178,7 +178,7 @@ d3.select("#svgDoc")
 	{
 		// Hide the svgDoc
 		d3.select("#svgDoc").style("display", "none");
-	};
+	});
 	
 	
 
