@@ -174,14 +174,14 @@ async function showDocument(docName)
 	d3.select("#svgDoc").style("display", "block");
 	
 	var docPath = "data/doc/" + docName;	
-	//var docEncrypted = await readFile(docPath);
-	//var document = await decrypt(docEncrypted, password);
+	var docEncrypted = await readFile(docPath);
+	var data = await decrypt(docEncrypted, password);
 	//console.log("document "+ document);
 	
 	// TEST
-	var doc = "img/hexagon_pink.txt";
+	/*var doc = "img/hexagon_pink.txt";
 	var data = await readFile(doc);
-	console.log("data " + data);
+	console.log("data " + data);*/
 	
 	svgDoc.append("image")
 	.attr("xlink:href", "data:image/png;base64," + data)
