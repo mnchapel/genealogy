@@ -170,10 +170,15 @@ d3.select("#svgDoc")
 	.append("g")
 	.append("image")
 	.attr("xlink:href", "img/cross-mark-on-a-black-circle-background.png")
-	.attr("x", 0)
-	.attr("y", 0)
+	.attr("x", 10)
+	.attr("y", 10)
 	.attr("width", 50)
-	.attr("height", 50);
+	.attr("height", 50)
+	.on("click", function()
+	{
+		// Hide the svgDoc
+		d3.select("#svgDoc").style("display", "none");
+	};
 	
 	
 
