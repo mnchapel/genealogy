@@ -167,6 +167,7 @@ var svgDoc = d3.select("body").append("svg")
 	.append("g")
 	.attr("id", "document");
 	
+// Add close button to svgDoc
 d3.select("#svgDoc")
 	.append("g")
 	.append("image")
@@ -211,7 +212,7 @@ var nodeHeight = 200;
 
 var tree = d3.layout.tree()
   .nodeSize([nodeWidth, nodeHeight])
-  .separation(function(a, b){ if (a.remove || b.remove) return 0.5; return 1.; })
+  .separation(function(a, b){ if (a.remove || b.remove) return 0.5; if(a.parents == b.parents) return 1.; else return 2. })
   .children(function(d){ return d.parents; });
 
 var nodes = tree.nodes(treeDataJson[0]);
