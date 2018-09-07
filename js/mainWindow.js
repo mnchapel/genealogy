@@ -174,9 +174,9 @@ async function showDocument(docName)
 	d3.select("#svgDoc").style("display", "block");
 	
 	var docPath = "data/doc/" + docName;	
-	var docEncrypted = await readFile(docPath);
-	var document = await decrypt(docEncrypted, password);
-	console.log("document "+ document);
+	//var docEncrypted = await readFile(docPath);
+	//var document = await decrypt(docEncrypted, password);
+	//console.log("document "+ document);
 	
 	// TEST
 	var doc = "img/hexagon_pink.txt";
