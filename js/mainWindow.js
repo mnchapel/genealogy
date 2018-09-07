@@ -164,7 +164,8 @@ var svgDoc = d3.select("body").append("svg")
 	.attr("position", "absolute")
 	.style("display", "none")
 	.call(zoomDoc)
-	.append("g");
+	.append("g")
+	.attr("id", "document");
 	
 d3.select("#svgDoc")
 	.append("g")
@@ -178,6 +179,9 @@ d3.select("#svgDoc")
 	{
 		// Hide the svgDoc
 		d3.select("#svgDoc").style("display", "none");
+		
+		// Remove the loaded document
+		d3.select("#document").html("");
 	});
 	
 	
