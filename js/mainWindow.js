@@ -181,6 +181,7 @@ async function showDocument(docName)
 	// TEST
 	var doc = "img/hexagon_pink.txt";
 	var data = await readFile(doc);
+	console.log("data " + data);
 	
 	svgDoc.append("image")
 	.attr("xlink:href", "data:image/png;base64," + data)
