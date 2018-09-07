@@ -166,23 +166,25 @@ var svgDoc = d3.select("body").append("svg")
 	.call(zoomDoc)
 	.append("g");
 	
+d3.select("#svgDoc")
+	.append("g")
+	.insert("rect", "text")
+	.attr("x", 0)
+	.attr("y", 0)
+	.attr("width", 50)
+	.attr("height", 50);
+	
 	
 
 
 async function showDocument(docName)
 {
+	// Display the svgDoc
 	d3.select("#svgDoc").style("display", "block");
 	
 	var docPath = "data/doc/" + docName;	
 	var docEncrypted = await readFile(docPath);
-	console.log("docEncrypted "+ docEncrypted);
-	console.log("password " + password);
 	var data = await decrypt(docEncrypted, password);
-	
-	// TEST
-	/*var doc = "img/hexagon_pink.txt";
-	var data = await readFile(doc);
-	console.log("data " + data);*/
 	
 	svgDoc.append("image")
 	.attr("xlink:href", "data:image/png;base64," + data)
