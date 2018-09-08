@@ -23,13 +23,13 @@ divSlider.appendChild(twoImgDiv);
 var memberIdCardImg = document.createElement("img");
 memberIdCardImg.id = "memberIdCardImg";
 memberIdCardImg.setAttribute("src", "img/id-card.png");
-memberIdCardImg.margin = "10px";
+memberIdCardImg.style.margin = "10px";
 twoImgDiv.appendChild(memberIdCardImg);
 // Create the additional files button
 var additionalFilesImg = document.createElement("img");
 additionalFilesImg.id = "additionalFilesImg";
 additionalFilesImg.setAttribute("src", "img/folder.png");
-additionalFilesImg.margin = "10px";
+additionalFilesImg.style.margin = "10px";
 twoImgDiv.appendChild(additionalFilesImg);
 
 
