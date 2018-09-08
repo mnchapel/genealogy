@@ -14,6 +14,18 @@ var famillyDataJson = JSON.parse(famillyDataString);
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.classList.add("slider");
+// Create the member id card button
+var memberIdCardImg = document.createElement("img");
+memberIdCardImg.id = "memberIdCardImg";
+memberIdCardImg.setAttribute("src", "img/id-card.png");
+divSlider.appendChild(memberIdCardImg);
+// Create the additional files button
+var additionalFilesImg = document.createElement("img");
+additionalFilesImg.id = "additionalFilesImg";
+additionalFilesImg.setAttribute("src", "img/folder.png");
+divSlider.appendChild(additionalFilesImg);
+
+
 // Create the firstLastName div
 var divFirstLastName = document.createElement("div");
 divFirstLastName.id = "firstLastName";
