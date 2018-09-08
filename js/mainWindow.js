@@ -14,16 +14,23 @@ var famillyDataJson = JSON.parse(famillyDataString);
 var divSlider = document.createElement("div");
 divSlider.id = "slider";
 divSlider.classList.add("slider");
+// Create the two images
+var twoImgDiv = document.createElement("div");
+twoImgDiv.classList.add("center");
+divSlider.appendChild(twoImgDiv);
+
 // Create the member id card button
 var memberIdCardImg = document.createElement("img");
 memberIdCardImg.id = "memberIdCardImg";
 memberIdCardImg.setAttribute("src", "img/id-card.png");
-divSlider.appendChild(memberIdCardImg);
+memberIdCardImg.margin = "10px";
+twoImgDiv.appendChild(memberIdCardImg);
 // Create the additional files button
 var additionalFilesImg = document.createElement("img");
 additionalFilesImg.id = "additionalFilesImg";
 additionalFilesImg.setAttribute("src", "img/folder.png");
-divSlider.appendChild(additionalFilesImg);
+additionalFilesImg.margin = "10px";
+twoImgDiv.appendChild(additionalFilesImg);
 
 
 // Create the firstLastName div
