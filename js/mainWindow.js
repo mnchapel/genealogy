@@ -290,10 +290,19 @@ function addAdditionalFiles(node)
 		return;
 	}
 		
+	var additionalFilesDiv = document.getElementById("additionalFilesDiv");
 	var fileDiv = document.createElement("div");
+	
+	// Create the file image
+	var fileImg = document.createElement("img");
+	fileImg.setAttribute("src", "img/file.png");
+	fileImg.addEventListener("click", function() { showDocument(node.fileName) } );
+	fileDiv.appendChild(noteImg);
+	
+	// Create the title
 	var fileTitle = document.createTextNode(node.title);
 	fileDiv.appendChild(fileTitle);
-	var additionalFilesDiv = document.getElementById("additionalFilesDiv");
+	
 	additionalFilesDiv.appendChild(fileDiv);
 }
 
@@ -323,7 +332,7 @@ var node = svg.selectAll("g.person")
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
 		
-		if(d.additionalFiles) { console.log("hello"); d.additionalFiles.forEach(addAdditionalFiles); };
+		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles); };
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
