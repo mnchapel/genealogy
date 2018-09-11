@@ -131,8 +131,10 @@ function createSliderIdMember()
 	noteDiv.classList.add("center");
 	idMemberDiv.appendChild(noteDiv);
 	
-	// Create the additional files div
+	// Create the additional files div and hide it
 	var additionalFilesDiv = document.createElement("div");
+	additionalFilesDiv.id = "additionalFilesDiv";
+	additionalFilesDiv.style.display = "none";
 	divSlider.appendChild(additionalFilesDiv);
 }
 
@@ -291,6 +293,7 @@ function addAdditionalFiles(node)
 	var fileDiv = document.createElement("div");
 	var fileTitle = document.createTextNode(node.title);
 	fileDiv.appendChild(fileTitle);
+	var additionalFilesDiv = document.getElementById("additionalFilesDiv");
 	additionalFilesDiv.appendChild(fileDiv);
 }
 
