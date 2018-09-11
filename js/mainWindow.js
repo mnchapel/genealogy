@@ -25,6 +25,8 @@ function createSliderIdMember()
 	{
 		memberIdCardImg.setAttribute("src", "img/identity-card_circle.png");
 		additionalFilesImg.setAttribute("src", "img/folder.png");
+		idMemberDiv.style.display = "";
+		additionalFilesDiv.style.display = "none";
 	});
 	twoImgDiv.appendChild(memberIdCardImg);
 	// Create the additional files button
@@ -36,99 +38,108 @@ function createSliderIdMember()
 	{
 		memberIdCardImg.setAttribute("src", "img/identity-card.png");
 		additionalFilesImg.setAttribute("src", "img/folder_circle.png");
+		idMemberDiv.style.display = "none";
+		additionalFilesDiv.style.display = "";
 	});
 	twoImgDiv.appendChild(additionalFilesImg);
 
+	// Create the id member div
+	var idMemberDiv = document.createElement("div");
+	divSlider.appendChild(idMemberDiv);
 
 	// Create the firstLastName div
 	var divFirstLastName = document.createElement("div");
 	divFirstLastName.id = "firstLastName";
 	divFirstLastName.classList.add("whitePencil");
 	divFirstLastName.classList.add("center");
-	divSlider.appendChild(divFirstLastName);
+	idMemberDiv.appendChild(divFirstLastName);
 	// Create the birth image
 	var birthImg = document.createElement("img");
 	birthImg.classList.add("center-img");
 	birthImg.setAttribute("src", "img/stroller.png");
-	divSlider.appendChild(birthImg);
+	idMemberDiv.appendChild(birthImg);
 	// Create the birth date div
 	var birthDateDiv = document.createElement("div");
 	birthDateDiv.id = "birthDate";
 	birthDateDiv.classList.add("whitePencil");
 	birthDateDiv.classList.add("center");
-	divSlider.appendChild(birthDateDiv);
+	idMemberDiv.appendChild(birthDateDiv);
 	// Create the birth place div
 	var birthPlaceDiv = document.createElement("div");
 	birthPlaceDiv.id = "birthPlace";
 	birthPlaceDiv.classList.add("whitePencil");
 	birthPlaceDiv.classList.add("center");
-	divSlider.appendChild(birthPlaceDiv);
+	idMemberDiv.appendChild(birthPlaceDiv);
 	// Create the birth look image
 	var birthLookImg = document.createElement("img");
 	birthLookImg.id = "birthLook",
 	birthLookImg.classList.add("center-img-look");
 	birthLookImg.setAttribute("src", "img/visible-opened-eye-interface-option.png");
-	divSlider.appendChild(birthLookImg);
+	idMemberDiv.appendChild(birthLookImg);
 	// Create the job image
 	var jobImg = document.createElement("img");
 	jobImg.id = "jobImg";
 	jobImg.classList.add("center-img");
 	jobImg.setAttribute("src", "img/office-briefcase.png");
-	divSlider.appendChild(jobImg);
+	idMemberDiv.appendChild(jobImg);
 	// Create the job div
 	var jobDiv = document.createElement("div");
 	jobDiv.id = "job";
 	jobDiv.classList.add("whitePencil");
 	jobDiv.classList.add("center");
-	divSlider.appendChild(jobDiv);
+	idMemberDiv.appendChild(jobDiv);
 	// Create the union image
 	var unionImg = document.createElement("img");
 	unionImg.id = "unionImg";
 	unionImg.classList.add("center-img");
 	unionImg.setAttribute("src", "img/wedding.png");
-	divSlider.appendChild(unionImg);
+	idMemberDiv.appendChild(unionImg);
 	// Create the union date div
 	var unionDateDiv = document.createElement("div");
 	unionDateDiv.id = "unionDate";
 	unionDateDiv.classList.add("whitePencil");
 	unionDateDiv.classList.add("center");
-	divSlider.appendChild(unionDateDiv);
+	idMemberDiv.appendChild(unionDateDiv);
 	// Create the union place div
 	var unionPlaceDiv = document.createElement("div");
 	unionPlaceDiv.id = "unionPlace";
 	unionPlaceDiv.classList.add("whitePencil");
 	unionPlaceDiv.classList.add("center");
-	divSlider.appendChild(unionPlaceDiv);
+	idMemberDiv.appendChild(unionPlaceDiv);
 	// Create the death image
 	var deathImg = document.createElement("img");
 	deathImg.id = "deathImg";
 	deathImg.classList.add("center-img");
 	deathImg.setAttribute("src", "img/tombstone.png");
-	divSlider.appendChild(deathImg);
+	idMemberDiv.appendChild(deathImg);
 	// Create the death date div
 	var deathDateDiv = document.createElement("div");
 	deathDateDiv.id = "deathDate";
 	deathDateDiv.classList.add("whitePencil");
 	deathDateDiv.classList.add("center");
-	divSlider.appendChild(deathDateDiv);
+	idMemberDiv.appendChild(deathDateDiv);
 	// Create the death place div
 	var deathPlaceDiv = document.createElement("div");
 	deathPlaceDiv.id = "deathPlace";
 	deathPlaceDiv.classList.add("whitePencil");
 	deathPlaceDiv.classList.add("center");
-	divSlider.appendChild(deathPlaceDiv);
+	idMemberDiv.appendChild(deathPlaceDiv);
 	// Create the note image
 	var noteImg = document.createElement("img");
 	noteImg.id = "noteImg";
 	noteImg.classList.add("center-img");
 	noteImg.setAttribute("src", "img/writing.png");
-	divSlider.appendChild(noteImg);
+	idMemberDiv.appendChild(noteImg);
 	// Create the note div
 	var noteDiv = document.createElement("div");
 	noteDiv.id = "note";
 	noteDiv.classList.add("whitePencil");
 	noteDiv.classList.add("center");
-	divSlider.appendChild(noteDiv);
+	idMemberDiv.appendChild(noteDiv);
+	
+	// Create the additional files div
+	var additionalFilesDiv = document.createElement("div");
+	divSlider.appendChild(additionalFilesDiv);
 }
 
 
