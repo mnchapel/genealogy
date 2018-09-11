@@ -70,12 +70,6 @@ function createSliderIdMember()
 	birthPlaceDiv.classList.add("whitePencil");
 	birthPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(birthPlaceDiv);
-	// Create the birth look image
-	var birthLookImg = document.createElement("img");
-	birthLookImg.id = "birthLook",
-	birthLookImg.classList.add("center-img-look");
-	birthLookImg.setAttribute("src", "img/visible-opened-eye-interface-option.png");
-	idMemberDiv.appendChild(birthLookImg);
 	// Create the job image
 	var jobImg = document.createElement("img");
 	jobImg.id = "jobImg";
@@ -289,8 +283,10 @@ function flatten(root)
 function addAdditionalFiles(node)
 {
 	if(!node.title)
+	{
 		console.log("error, there is no title");
 		return;
+	}
 		
 	var fileDiv = document.createElement("div");
 	var fileTitle = document.createTextNode(node.title);
@@ -324,7 +320,7 @@ var node = svg.selectAll("g.person")
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
 		
-		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles) };
+		if(d.additionalFiles) { console.log("hello"); d.additionalFiles.forEach(addAdditionalFiles); };
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
