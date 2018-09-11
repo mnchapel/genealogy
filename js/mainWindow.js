@@ -298,7 +298,7 @@ function addAdditionalFiles(node)
 	var fileImg = document.createElement("img");
 	fileImg.setAttribute("src", "img/file.png");
 	fileImg.addEventListener("click", function() { showDocument(node.fileName) } );
-	fileDiv.appendChild(noteImg);
+	fileDiv.appendChild(fileImg);
 	
 	// Create the title
 	var fileTitle = document.createTextNode(node.title);
