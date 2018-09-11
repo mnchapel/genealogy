@@ -21,7 +21,7 @@ function createSliderIdMember()
 	memberIdCardImg.id = "memberIdCardImg";
 	memberIdCardImg.setAttribute("src", "img/identity-card_circle.png");
 	memberIdCardImg.style.margin = "10px";
-	memberIdCardImg.on("click", function()
+	memberIdCardImg.addEventListener("click", function()
 	{
 		memberIdCardImg.setAttribute("src", "img/identity-card_circle.png");
 		additionalFilesImg.setAttribute("src", "img/folder.png");
@@ -32,7 +32,7 @@ function createSliderIdMember()
 	additionalFilesImg.id = "additionalFilesImg";
 	additionalFilesImg.setAttribute("src", "img/folder.png");
 	additionalFilesImg.style.margin = "10px";
-	additionalFilesImg.on("click", function()
+	additionalFilesImg.addEventListener("click", function()
 	{
 		memberIdCardImg.setAttribute("src", "img/identity-card.png");
 		additionalFilesImg.setAttribute("src", "img/folder_circle.png");
@@ -129,31 +129,6 @@ function createSliderIdMember()
 	noteDiv.classList.add("whitePencil");
 	noteDiv.classList.add("center");
 	divSlider.appendChild(noteDiv);
-}
-
-
-
-function createSliderAdditionalFiles()
-{
-	
-	// Create the two images
-	var twoImgDiv = document.createElement("div");
-	twoImgDiv.classList.add("center");
-	divSlider.appendChild(twoImgDiv);
-
-	// Create the member id card button
-	var memberIdCardImg = document.createElement("img");
-	memberIdCardImg.id = "memberIdCardImg";
-	memberIdCardImg.setAttribute("src", "img/identity-card.png");
-	memberIdCardImg.style.margin = "10px";
-	memberIdCardImg.on("click", function() {  });
-	twoImgDiv.appendChild(memberIdCardImg);
-	// Create the additional files button
-	var additionalFilesImg = document.createElement("img");
-	additionalFilesImg.id = "additionalFilesImg";
-	additionalFilesImg.setAttribute("src", "img/folder_circle.png");
-	additionalFilesImg.style.margin = "10px";
-	twoImgDiv.appendChild(additionalFilesImg);
 }
 
 
