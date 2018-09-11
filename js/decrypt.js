@@ -1,5 +1,6 @@
 async function decrypt(encrypted, password)
 {
+	var text;
 	var options =
 	{
 		message: await openpgp.message.readArmored(encrypted), // parse encrypted bytes
@@ -7,9 +8,12 @@ async function decrypt(encrypted, password)
 		format: 'utf8'         		// output
 	};
 
-	var text = openpgp.decrypt(options).then(function(plainText)
+	text = openpgp.decrypt(options).then(function(plainText)
 	{
 		return plainText.data;
+	}).catch(function(error)
+	{
+		console.log("error");
 	});
 	
 	return text;
