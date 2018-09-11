@@ -134,6 +134,7 @@ function createSliderIdMember()
 	// Create the additional files div and hide it
 	var additionalFilesDiv = document.createElement("div");
 	additionalFilesDiv.id = "additionalFilesDiv";
+	additionalFilesDiv.classList.add("whitePencil");
 	additionalFilesDiv.style.display = "none";
 	divSlider.appendChild(additionalFilesDiv);
 }
@@ -331,6 +332,9 @@ var node = svg.selectAll("g.person")
 		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
+		
+		// Remove old additional files
+		$("#additionalFilesDiv").html("");
 		
 		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles); };
 
