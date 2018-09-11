@@ -22,7 +22,7 @@ divSlider.appendChild(twoImgDiv);
 // Create the member id card button
 var memberIdCardImg = document.createElement("img");
 memberIdCardImg.id = "memberIdCardImg";
-memberIdCardImg.setAttribute("src", "img/id-card.png");
+memberIdCardImg.setAttribute("src", "img/identity-card_circle.png");
 memberIdCardImg.style.margin = "10px";
 twoImgDiv.appendChild(memberIdCardImg);
 // Create the additional files button
