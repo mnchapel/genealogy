@@ -286,6 +286,19 @@ function flatten(root)
 }
 
 
+function addAdditionalFiles(node)
+{
+	if(!node.title)
+		console.log("error, there is no title");
+		return;
+		
+	var fileDiv = document.createElement("div");
+	var fileTitle = document.createTextNode(node.title);
+	fileDiv.appendChild(fileTitle);
+	additionalFilesDiv.appendChild(fileDiv);
+}
+
+
 
 var allNodes = flatten(treeDataJson[0]);
 
@@ -302,7 +315,6 @@ var node = svg.selectAll("g.person")
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
-		if(d.birthDoc) { $("#birthLook").show(); $("#birthLook").click(function(){ showDocument(d.birthDoc) }); } else $("#birthLook").hide();
 		if(!d.job) { $('#jobImg').hide(); $('#job').hide(); } else { $('#jobImg').show(); $('#job').show(); $('#job').html(d.job); }
 		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
 		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
@@ -311,6 +323,8 @@ var node = svg.selectAll("g.person")
 		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
 		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
+		
+		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles) };
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
