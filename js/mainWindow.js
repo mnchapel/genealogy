@@ -53,6 +53,7 @@ function createSliderIdMember()
 	divFirstLastName.classList.add("whitePencil");
 	divFirstLastName.classList.add("center");
 	idMemberDiv.appendChild(divFirstLastName);
+	
 	// Create the birth image
 	var birthImg = document.createElement("img");
 	birthImg.classList.add("center-img");
@@ -70,6 +71,7 @@ function createSliderIdMember()
 	birthPlaceDiv.classList.add("whitePencil");
 	birthPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(birthPlaceDiv);
+	
 	// Create the job image
 	var jobImg = document.createElement("img");
 	jobImg.id = "jobImg";
@@ -82,6 +84,7 @@ function createSliderIdMember()
 	jobDiv.classList.add("whitePencil");
 	jobDiv.classList.add("center");
 	idMemberDiv.appendChild(jobDiv);
+	
 	// Create the union image
 	var unionImg = document.createElement("img");
 	unionImg.id = "unionImg";
@@ -100,6 +103,32 @@ function createSliderIdMember()
 	unionPlaceDiv.classList.add("whitePencil");
 	unionPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(unionPlaceDiv);
+	
+	// Create the union religous image
+	var unionReligiousImg = document.createElement("img");
+	unionReligiousImg.id = "unionReligiousImg";
+	unionReligiousImg.classList.add("center-img");
+	unionReligiousImg.setAttribute("src", "img/cross.png");
+	idMemberDiv.appendChild(unionReligiousImg);
+	// Create the union religous date div
+	var unioReligousnDate = document.createElement("div");
+	unioReligousnDate.id = "unioReligousnDate";
+	unioReligousnDate.classList.add("whitePencil");
+	unioReligousnDate.classList.add("center");
+	idMemberDiv.appendChild(unioReligousnDate);
+	// Create the union religous place 1 div
+	var unionReligiousPlace1 = document.createElement("div");
+	unionReligiousPlace1.id = "unionReligiousPlace1";
+	unionReligiousPlace1.classList.add("whitePencil");
+	unionReligiousPlace1.classList.add("center");
+	idMemberDiv.appendChild(unionReligiousPlace1);
+	// Create the union religous place 2 div
+	var unionReligiousPlace2 = document.createElement("div");
+	unionReligiousPlace2.id = "unionReligiousPlace2";
+	unionReligiousPlace2.classList.add("whitePencil");
+	unionReligiousPlace2.classList.add("center");
+	idMemberDiv.appendChild(unionReligiousPlace2);
+	
 	// Create the death image
 	var deathImg = document.createElement("img");
 	deathImg.id = "deathImg";
@@ -118,6 +147,7 @@ function createSliderIdMember()
 	deathPlaceDiv.classList.add("whitePencil");
 	deathPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(deathPlaceDiv);
+	
 	// Create the note image
 	var noteImg = document.createElement("img");
 	noteImg.id = "noteImg";
@@ -320,28 +350,46 @@ var node = svg.selectAll("g.person")
 	.attr("transform", function(d) { return "translate(" + d.x + "," + -d.y + ")"; })
 	.on("click", function(d)
 	{
-		// Fill the slider
+		// Fill the slider --------------------------------------
+		// Name
 		$('#firstLastName').html(d.firstname + " " + d.lastname);
+		
+		// Birth
 		$('#birthDate').html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
+		
+		// Job
 		if(!d.job) { $('#jobImg').hide(); $('#job').hide(); } else { $('#jobImg').show(); $('#job').show(); $('#job').html(d.job); }
-		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide(); } else { $('#unionImg').show(); }
-		if(d.unionDate)  { $("#unionDate").show();  $('#unionDate').html(d.unionDate)    } else $("#unionDate").hide();
-		if(d.unionDate)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace)   } else $("#unionPlace").hide();
-		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide(); } else { $('#deathImg').show(); }
+		
+		// Union
+		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide();                       } else $('#unionImg').show();
+		if(d.unionDate)   { $("#unionDate").show();  $('#unionDate').html(d.unionDate)   } else $("#unionDate").hide();
+		if(d.unionPlace)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace) } else $("#unionPlace").hide();
+		
+		// Union Religious
+		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && unionReligiousPlace2) { $('#unionReligiousImg').hide();           } else $('#unionReligiousImg').show();
+		if(d.unionReligious)        { if(d.unionReligious == "Christian") ${"#unionReligiousImg"}.attr("src", "img/cross.png");  } else $('#unionReligiousImg').hide();
+		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $('#unionReligiousDate').html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
+		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $('#unionReligiousPlace1').html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
+		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $('#unionReligiousPlace2').html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
+		
+		// Death
+		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide();                      } else $('#deathImg').show();
 		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
-		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace)  } else $("#deathPlace").hide();
+		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace) } else $("#deathPlace").hide();
+		
+		// Note
 		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
 		
 		// Remove old additional files
 		$("#additionalFilesDiv").html("");
-		
+		// Add additional files
 		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles); };
 
 		// Show the slider
 		var slider = $('#slider').slideReveal();
 		slider.slideReveal("show");
-	});;
+	});
 
 
 
