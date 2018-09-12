@@ -361,22 +361,22 @@ var node = svg.selectAll("g.person")
 	{
 		// Fill the slider --------------------------------------
 		// Name
-		$('#firstLastName').html(d.firstname + " " + d.lastname);
+		$("#firstLastName").html(d.firstname + " " + d.lastname);
 		
 		// Birth
-		$('#birthDate').html(d.birthDate);
+		$("#birthDate").html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
 		
 		// Job
-		if(!d.job) { $('#jobImg').hide(); $('#job').hide(); } else { $('#jobImg').show(); $('#job').show(); $('#job').html(d.job); }
+		if(!d.job) { $("#jobImg").hide(); $("#job").hide(); } else { $("#jobImg").show(); $("#job").show(); $("#job").html(d.job); }
 		
 		// Union
-		if(!d.unionDate && !d.unionPlace) { $('#unionImg').hide();                       } else $('#unionImg').show();
+		if(!d.unionDate && !d.unionPlace) { $("#unionImg").hide();                       } else $("#unionImg").show();
 		if(d.unionDate)   { $("#unionDate").show();  $('#unionDate').html(d.unionDate)   } else $("#unionDate").hide();
 		if(d.unionPlace)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace) } else $("#unionPlace").hide();
 		
 		// Union Religious
-		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && unionReligiousPlace2) { $('#unionReligiousDiv').hide();           } else $('#unionReligiousDiv').show();
+		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && unionReligiousPlace2) { $("#unionReligiousDiv").hide();           } else $("#unionReligiousDiv").show();
 		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $('#unionReligiousDate').html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
 		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $('#unionReligiousPlace1').html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
 		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $('#unionReligiousPlace2').html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
@@ -388,12 +388,12 @@ var node = svg.selectAll("g.person")
 		else $("#unionReligiousImg").attr("src", "img/information.png");
 		
 		// Death
-		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide();                      } else $('#deathImg').show();
+		if(!d.deathDate && !d.deathPlace) { $("#deathImg").hide();                      } else $("#deathImg").show();
 		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace) } else $("#deathPlace").hide();
 		
 		// Note
-		if(!d.note) { $('#noteImg').hide(); $('#note').hide(); } else { $('#noteImg').show(); $('#note').show(); $('#note').html(d.note); }
+		if(!d.note) { $("#noteImg").hide(); $("#note").hide(); } else { $("#noteImg").show(); $("#note").show(); $("#note").html(d.note); }
 		
 		// Remove old additional files
 		$("#additionalFilesDiv").html("");
@@ -401,7 +401,7 @@ var node = svg.selectAll("g.person")
 		if(d.additionalFiles) { d.additionalFiles.forEach(addAdditionalFiles); };
 
 		// Show the slider
-		var slider = $('#slider').slideReveal();
+		var slider = $("#slider").slideReveal();
 		slider.slideReveal("show");
 	});
 
