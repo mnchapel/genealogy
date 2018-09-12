@@ -88,7 +88,7 @@ function createSliderIdMember()
 	// Create the union image
 	var unionImg = document.createElement("img");
 	unionImg.id = "unionImg";
-	unionImg.classList.add("center");
+	unionImg.classList.add("center-img");
 	unionImg.setAttribute("src", "img/wedding.png");
 	idMemberDiv.appendChild(unionImg);
 	// Create the union date div
@@ -106,7 +106,7 @@ function createSliderIdMember()
 	
 	// Create the union religious images div
 	var unionReligiousDiv = document.createElement("div");
-	unionReligiousDiv.classList.add("center-img");
+	unionReligiousDiv.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousDiv);
 	// Create the union image
 	var unionImg2 = document.createElement("img");
