@@ -104,25 +104,33 @@ function createSliderIdMember()
 	unionPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(unionPlaceDiv);
 	
-	// Create the union religous image
+	// Create the union religious images div
+	var unionReligiousDiv = document.createElement("div");
+	idMemberDiv.appendChild(unionReligiousDiv);
+	// Create the union image
+	var unionImg2 = document.createElement("img");
+	unionImg2.classList.add("center-img");
+	unionImg2.setAttribute("src", "img/wedding.png");
+	unionReligiousDiv.appendChild(unionImg2);
+	// Create the union religious image
 	var unionReligiousImg = document.createElement("img");
 	unionReligiousImg.id = "unionReligiousImg";
 	unionReligiousImg.classList.add("center-img");
-	unionReligiousImg.setAttribute("src", "img/cross.png");
-	idMemberDiv.appendChild(unionReligiousImg);
-	// Create the union religous date div
-	var unioReligousnDate = document.createElement("div");
-	unioReligousnDate.id = "unioReligousnDate";
-	unioReligousnDate.classList.add("whitePencil");
-	unioReligousnDate.classList.add("center");
-	idMemberDiv.appendChild(unioReligousnDate);
-	// Create the union religous place 1 div
+	unionReligiousImg.setAttribute("src", "img/information.png");
+	unionReligiousDiv.appendChild(unionReligiousImg);
+	// Create the union religious date div
+	var unioReligiousnDate = document.createElement("div");
+	unioReligiousnDate.id = "unioReligiousnDate";
+	unioReligiousnDate.classList.add("whitePencil");
+	unioReligiousnDate.classList.add("center");
+	idMemberDiv.appendChild(unioReligiousnDate);
+	// Create the union religious place 1 div
 	var unionReligiousPlace1 = document.createElement("div");
 	unionReligiousPlace1.id = "unionReligiousPlace1";
 	unionReligiousPlace1.classList.add("whitePencil");
 	unionReligiousPlace1.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousPlace1);
-	// Create the union religous place 2 div
+	// Create the union religious place 2 div
 	var unionReligiousPlace2 = document.createElement("div");
 	unionReligiousPlace2.id = "unionReligiousPlace2";
 	unionReligiousPlace2.classList.add("whitePencil");
@@ -368,10 +376,17 @@ var node = svg.selectAll("g.person")
 		
 		// Union Religious
 		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && unionReligiousPlace2) { $('#unionReligiousImg').hide();           } else $('#unionReligiousImg').show();
-		if(d.unionReligious)        { if(d.unionReligious == "Christian") $("#unionReligiousImg").attr("src", "img/cross.png");  } else $('#unionReligiousImg').hide();
 		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $('#unionReligiousDate').html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
 		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $('#unionReligiousPlace1').html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
 		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $('#unionReligiousPlace2').html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
+		if(d.unionReligious)
+		{
+			if(d.unionReligious == "Christian")
+				$("#unionReligiousImg").attr("src", "img/cross.png");
+			else
+				$("#unionReligiousImg").attr("src", "img/information.png");
+		}
+		else $('#unionReligiousImg').hide();
 		
 		// Death
 		if(!d.deathDate && !d.deathPlace) { $('#deathImg').hide();                      } else $('#deathImg').show();
