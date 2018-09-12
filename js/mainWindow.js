@@ -119,11 +119,11 @@ function createSliderIdMember()
 	unionReligiousImg.setAttribute("src", "img/information.png");
 	unionReligiousDiv.appendChild(unionReligiousImg);
 	// Create the union religious date div
-	var unioReligiousnDate = document.createElement("div");
-	unioReligiousnDate.id = "unioReligiousnDate";
-	unioReligiousnDate.classList.add("whitePencil");
-	unioReligiousnDate.classList.add("center");
-	idMemberDiv.appendChild(unioReligiousnDate);
+	var unionReligiousDate = document.createElement("div");
+	unionReligiousDate.id = "unionReligiousDate";
+	unionReligiousDate.classList.add("whitePencil");
+	unionReligiousDate.classList.add("center");
+	idMemberDiv.appendChild(unionReligiousDate);
 	// Create the union religious place 1 div
 	var unionReligiousPlace1 = document.createElement("div");
 	unionReligiousPlace1.id = "unionReligiousPlace1";
