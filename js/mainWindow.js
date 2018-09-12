@@ -1,6 +1,3 @@
-var boxWidth = 100,
-    boxHeight = 40;
-
 //console.log(treeData);
 
 var treeDataJson    = JSON.parse(treeData);
@@ -191,21 +188,9 @@ divSlider.classList.add("slider");
 // Add the slider to the document
 document.getElementsByTagName("body")[0].appendChild(divSlider);
 // Hide the slider
-var slider = $('#slider').slideReveal();
+var slider = $("#slider").slideReveal();
 
 createSliderIdMember();
-
-
-
-/*// Create svg doc
-var svgDoc = document.createElement("svg");
-svgDoc.id = "svgDoc";
-svgDoc.classList.add("svgDoc");
-svgDoc.setAttribute("width", "100%");
-svgDoc.setAttribute("height", "100%");
-svgDoc.style.display = "none";
-// Add the svg to the document
-document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 
 
 
@@ -215,7 +200,7 @@ document.getElementsByTagName("body")[0].appendChild(svgDoc);*/
 // Setup zoom and pan
 var zoom = d3.behavior.zoom()
 	.scaleExtent([.1,1])
-	.on('zoom', function()
+	.on("zoom", function()
 	{
 		svg.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
 	})
@@ -225,7 +210,7 @@ var zoom = d3.behavior.zoom()
 // Setup zoom and pan
 var zoomDoc = d3.behavior.zoom()
 	.scaleExtent([.1,1])
-	.on('zoom', function()
+	.on("zoom", function()
 	{
 		svgDoc.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
 	});
@@ -365,21 +350,21 @@ var node = svg.selectAll("g.person")
 		
 		// Birth
 		$("#birthDate").html(d.birthDate);
-		if(d.birthPlace) { $("#birthPlace").show(); $('#birthPlace').html(d.birthPlace); } else $("#birthPlace").hide();
+		if(d.birthPlace) { $("#birthPlace").show(); $("#birthPlace").html(d.birthPlace); } else $("#birthPlace").hide();
 		
 		// Job
 		if(!d.job) { $("#jobImg").hide(); $("#job").hide(); } else { $("#jobImg").show(); $("#job").show(); $("#job").html(d.job); }
 		
 		// Union
 		if(!d.unionDate && !d.unionPlace) { $("#unionImg").hide();                       } else $("#unionImg").show();
-		if(d.unionDate)   { $("#unionDate").show();  $('#unionDate').html(d.unionDate)   } else $("#unionDate").hide();
-		if(d.unionPlace)  { $("#unionPlace").show(); $('#unionPlace').html(d.unionPlace) } else $("#unionPlace").hide();
+		if(d.unionDate)   { $("#unionDate").show();  $("#unionDate").html(d.unionDate)   } else $("#unionDate").hide();
+		if(d.unionPlace)  { $("#unionPlace").show(); $("#unionPlace").html(d.unionPlace) } else $("#unionPlace").hide();
 		
 		// Union Religious
-		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && !unionReligiousPlace2) { $("#unionReligiousDiv").hide();           } else $("#unionReligiousDiv").show();
-		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $('#unionReligiousDate').html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
-		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $('#unionReligiousPlace1').html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
-		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $('#unionReligiousPlace2').html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
+		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && !unionReligiousPlace2) { $("#unionReligiousDiv").hide();  console.log("hide"); } else {$("#unionReligiousDiv").show(); console.log("show"); }
+		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $("#unionReligiousDate").html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
+		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $("#unionReligiousPlace1").html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
+		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $("#unionReligiousPlace2").html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
 		if(d.unionReligious)
 		{
 			if(d.unionReligious == "Christian")
@@ -389,8 +374,8 @@ var node = svg.selectAll("g.person")
 		
 		// Death
 		if(!d.deathDate && !d.deathPlace) { $("#deathImg").hide();                      } else $("#deathImg").show();
-		if(d.deathDate)  { $("#deathDate").show();  $('#deathDate').html(d.deathDate)   } else $("#deathDate").hide();
-		if(d.deathPlace) { $("#deathPlace").show(); $('#deathPlace').html(d.deathPlace) } else $("#deathPlace").hide();
+		if(d.deathDate)  { $("#deathDate").show();  $("#deathDate").html(d.deathDate)   } else $("#deathDate").hide();
+		if(d.deathPlace) { $("#deathPlace").show(); $("#deathPlace").html(d.deathPlace) } else $("#deathPlace").hide();
 		
 		// Note
 		if(!d.note) { $("#noteImg").hide(); $("#note").hide(); } else { $("#noteImg").show(); $("#note").show(); $("#note").html(d.note); }
@@ -442,7 +427,7 @@ node.append("text")
 	.attr("dx", 0)
 	.attr("dy", -10)
 	.attr("text-anchor", "middle")
-	.attr('class', 'firstname')
+	.attr("class", "firstname")
 	.text(function(d)
 	{
 		if(d.hidden)
@@ -465,7 +450,7 @@ node.append("text")
 	.attr("dx", 0)
 	.attr("dy", 50)
 	.attr("text-anchor", "middle")
-	.attr('class', 'dates')
+	.attr("class", "dates")
 	.text(function(d)
 	{
 		if(d.hidden)
@@ -608,13 +593,4 @@ function famillyLine(d, i)
 
 
 
-    
-/**
- * Custom path function that creates straight connecting lines.
- */
-function elbow(d) {
-  return "M" + d.source.x + "," + d.source.y
-    + "V" + (d.source.y + (d.target.y-d.source.y)/2)
-    + "H" + d.target.x 
-    + "V" + d.target.y;
-}
+
