@@ -368,7 +368,7 @@ var node = svg.selectAll("g.person")
 		
 		// Union Religious
 		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && unionReligiousPlace2) { $('#unionReligiousImg').hide();           } else $('#unionReligiousImg').show();
-		if(d.unionReligious)        { if(d.unionReligious == "Christian") ${"#unionReligiousImg"}.attr("src", "img/cross.png");  } else $('#unionReligiousImg').hide();
+		if(d.unionReligious)        { if(d.unionReligious == "Christian") $("#unionReligiousImg").attr("src", "img/cross.png");  } else $('#unionReligiousImg').hide();
 		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $('#unionReligiousDate').html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
 		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $('#unionReligiousPlace1').html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
 		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $('#unionReligiousPlace2').html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
