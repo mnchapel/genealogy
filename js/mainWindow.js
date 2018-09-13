@@ -50,7 +50,7 @@ function createSliderIdMember()
 	divFirstLastName.classList.add("whitePencil");
 	divFirstLastName.classList.add("center");
 	idMemberDiv.appendChild(divFirstLastName);
-	
+
 	// Create the birth image
 	var birthImg = document.createElement("img");
 	birthImg.classList.add("center-img");
@@ -68,7 +68,7 @@ function createSliderIdMember()
 	birthPlaceDiv.classList.add("whitePencil");
 	birthPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(birthPlaceDiv);
-	
+
 	// Create the job image
 	var jobImg = document.createElement("img");
 	jobImg.id = "jobImg";
@@ -81,7 +81,7 @@ function createSliderIdMember()
 	jobDiv.classList.add("whitePencil");
 	jobDiv.classList.add("center");
 	idMemberDiv.appendChild(jobDiv);
-	
+
 	// Create the union image
 	var unionImg = document.createElement("img");
 	unionImg.id = "unionImg";
@@ -100,7 +100,7 @@ function createSliderIdMember()
 	unionPlaceDiv.classList.add("whitePencil");
 	unionPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(unionPlaceDiv);
-	
+
 	// Create the union religious images div
 	var unionReligiousDiv = document.createElement("div");
 	unionReligiousDiv.classList.add("center");
@@ -134,7 +134,7 @@ function createSliderIdMember()
 	unionReligiousPlace2.classList.add("whitePencil");
 	unionReligiousPlace2.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousPlace2);
-	
+
 	// Create the death image
 	var deathImg = document.createElement("img");
 	deathImg.id = "deathImg";
@@ -153,7 +153,7 @@ function createSliderIdMember()
 	deathPlaceDiv.classList.add("whitePencil");
 	deathPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(deathPlaceDiv);
-	
+
 	// Create the note image
 	var noteImg = document.createElement("img");
 	noteImg.id = "noteImg";
@@ -166,7 +166,7 @@ function createSliderIdMember()
 	noteDiv.classList.add("whitePencil");
 	noteDiv.classList.add("center");
 	idMemberDiv.appendChild(noteDiv);
-	
+
 	// Create the additional files div and hide it
 	var additionalFilesDiv = document.createElement("div");
 	additionalFilesDiv.id = "additionalFilesDiv";
@@ -206,7 +206,7 @@ var zoom = d3.behavior.zoom()
 	})
 	// Offset so that first pan and zoom does not jump back to the origin
 	.translate([-1000, 800]);
-	
+
 // Setup zoom and pan
 var zoomDoc = d3.behavior.zoom()
 	.scaleExtent([.1,1])
@@ -224,7 +224,7 @@ var svg = d3.select("body").append("svg")
 	.call(zoom)
 	.append("g")
 	.attr("transform", "translate(-1000,800)");
-	
+
 
 console.log("test");
 var svgDoc = d3.select("body").append("svg")
@@ -237,7 +237,7 @@ var svgDoc = d3.select("body").append("svg")
 	.call(zoomDoc)
 	.append("g")
 	.attr("id", "document");
-	
+
 // Add close button to svgDoc
 d3.select("#svgDoc")
 	.append("g")
@@ -251,23 +251,23 @@ d3.select("#svgDoc")
 	{
 		// Hide the svgDoc
 		d3.select("#svgDoc").style("display", "none");
-		
+
 		// Remove the loaded document
 		d3.select("#document").html("");
 	});
-	
-	
+
+
 
 
 async function showDocument(docName)
 {
 	// Display the svgDoc
 	d3.select("#svgDoc").style("display", "block");
-	
-	var docPath = "data/doc/" + docName;	
+
+	var docPath = "data/doc/" + docName;
 	var docEncrypted = await readFile(docPath);
 	var data = await decrypt(docEncrypted, password);
-	
+
 	svgDoc.append("image")
 	.attr("xlink:href", "data:image/png;base64," + data)
 	.attr("x", 0)
@@ -298,7 +298,7 @@ function flatten(root)
 	{
 	    if(node.parents)
 		node.parents.forEach(recurse);
-	    n.push(node);	
+	    n.push(node);
 	}
 
 	recurse(root);
@@ -314,20 +314,20 @@ function addAdditionalFiles(node)
 		console.log("error, there is no title");
 		return;
 	}
-		
+
 	var additionalFilesDiv = document.getElementById("additionalFilesDiv");
 	var fileDiv = document.createElement("div");
-	
+
 	// Create the file image
 	var fileImg = document.createElement("img");
 	fileImg.setAttribute("src", "img/file.png");
 	fileImg.addEventListener("click", function() { showDocument(node.fileName) } );
 	fileDiv.appendChild(fileImg);
-	
+
 	// Create the title
 	var fileTitle = document.createTextNode(node.title);
 	fileDiv.appendChild(fileTitle);
-	
+
 	additionalFilesDiv.appendChild(fileDiv);
 }
 
@@ -336,7 +336,7 @@ function addAdditionalFiles(node)
 var allNodes = flatten(treeDataJson[0]);
 
 
-// Style nodes    
+// Style nodes
 var node = svg.selectAll("g.person")
 	.data(nodes)
 	.enter().append("g")
@@ -347,21 +347,21 @@ var node = svg.selectAll("g.person")
 		// Fill the slider --------------------------------------
 		// Name
 		$("#firstLastName").html(d.firstname + " " + d.lastname);
-		
+
 		// Birth
 		$("#birthDate").html(d.birthDate);
 		if(d.birthPlace) { $("#birthPlace").show(); $("#birthPlace").html(d.birthPlace); } else $("#birthPlace").hide();
-		
+
 		// Job
 		if(!d.job) { $("#jobImg").hide(); $("#job").hide(); } else { $("#jobImg").show(); $("#job").show(); $("#job").html(d.job); }
-		
+
 		// Union
 		if(!d.unionDate && !d.unionPlace) { $("#unionImg").hide();                       } else $("#unionImg").show();
 		if(d.unionDate)   { $("#unionDate").show();  $("#unionDate").html(d.unionDate)   } else $("#unionDate").hide();
 		if(d.unionPlace)  { $("#unionPlace").show(); $("#unionPlace").html(d.unionPlace) } else $("#unionPlace").hide();
-		
+
 		// Union Religious
-		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && !unionReligiousPlace2) { $("#unionReligiousDiv").hide();  console.log("hide"); } else {$("#unionReligiousDiv").show(); console.log("show"); }
+		if(!d.unionReligiousDate && !d.unionReligiousPlace1 && !d.unionReligiousPlace2) { $("#unionReligiousDiv").hide();  console.log("hide"); } else {$("#unionReligiousDiv").show(); console.log("show"); }
 		if(d.unionReligiousDate)    { $("#unionReligiousDate").show();   $("#unionReligiousDate").html(d.unionReligiousDate)     } else $("#unionReligiousDate").hide();
 		if(d.unionReligiousPlace1)  { $("#unionReligiousPlace1").show(); $("#unionReligiousPlace1").html(d.unionReligiousPlace1) } else $("#unionReligiousPlace1").hide();
 		if(d.unionReligiousPlace2)  { $("#unionReligiousPlace2").show(); $("#unionReligiousPlace2").html(d.unionReligiousPlace2) } else $("#unionReligiousPlace2").hide();
@@ -371,15 +371,15 @@ var node = svg.selectAll("g.person")
 				$("#unionReligiousImg").attr("src", "img/cross.png");
 		}
 		else $("#unionReligiousImg").attr("src", "img/information.png");
-		
+
 		// Death
 		if(!d.deathDate && !d.deathPlace) { $("#deathImg").hide();                      } else $("#deathImg").show();
 		if(d.deathDate)  { $("#deathDate").show();  $("#deathDate").html(d.deathDate)   } else $("#deathDate").hide();
 		if(d.deathPlace) { $("#deathPlace").show(); $("#deathPlace").html(d.deathPlace) } else $("#deathPlace").hide();
-		
+
 		// Note
 		if(!d.note) { $("#noteImg").hide(); $("#note").hide(); } else { $("#noteImg").show(); $("#note").show(); $("#note").html(d.note); }
-		
+
 		// Remove old additional files
 		$("#additionalFilesDiv").html("");
 		// Add additional files
@@ -421,7 +421,7 @@ node.append("image")
 		else
 			return "";
 	});
-	
+
 // Draw the person's firstname and position it inside the box
 node.append("text")
 	.attr("dx", 0)
@@ -590,7 +590,3 @@ function famillyLine(d, i)
 
 	return fun(linedata);
 }
-
-
-
-
