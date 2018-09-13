@@ -103,6 +103,7 @@ function createSliderIdMember()
 
 	// Create the union religious images div
 	var unionReligiousDiv = document.createElement("div");
+	unionReligiousDiv.id = "unionReligiousDiv";
 	unionReligiousDiv.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousDiv);
 	// Create the union image
