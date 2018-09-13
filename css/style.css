@@ -58,8 +58,9 @@ svg{
 	fill: white
 }
 
-.whitePencil{
-	color: white
+.sliderPencil{
+	color: white;
+	font: 14px sans-serif;
 }
 
 .dates{

@@ -47,7 +47,7 @@ function createSliderIdMember()
 	// Create the firstLastName div
 	var divFirstLastName = document.createElement("div");
 	divFirstLastName.id = "firstLastName";
-	divFirstLastName.classList.add("whitePencil");
+	divFirstLastName.classList.add("sliderPencil");
 	divFirstLastName.classList.add("center");
 	idMemberDiv.appendChild(divFirstLastName);
 
@@ -59,13 +59,13 @@ function createSliderIdMember()
 	// Create the birth date div
 	var birthDateDiv = document.createElement("div");
 	birthDateDiv.id = "birthDate";
-	birthDateDiv.classList.add("whitePencil");
+	birthDateDiv.classList.add("sliderPencil");
 	birthDateDiv.classList.add("center");
 	idMemberDiv.appendChild(birthDateDiv);
 	// Create the birth place div
 	var birthPlaceDiv = document.createElement("div");
 	birthPlaceDiv.id = "birthPlace";
-	birthPlaceDiv.classList.add("whitePencil");
+	birthPlaceDiv.classList.add("sliderPencil");
 	birthPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(birthPlaceDiv);
 
@@ -78,7 +78,7 @@ function createSliderIdMember()
 	// Create the job div
 	var jobDiv = document.createElement("div");
 	jobDiv.id = "job";
-	jobDiv.classList.add("whitePencil");
+	jobDiv.classList.add("sliderPencil");
 	jobDiv.classList.add("center");
 	idMemberDiv.appendChild(jobDiv);
 
@@ -91,13 +91,13 @@ function createSliderIdMember()
 	// Create the union date div
 	var unionDateDiv = document.createElement("div");
 	unionDateDiv.id = "unionDate";
-	unionDateDiv.classList.add("whitePencil");
+	unionDateDiv.classList.add("sliderPencil");
 	unionDateDiv.classList.add("center");
 	idMemberDiv.appendChild(unionDateDiv);
 	// Create the union place div
 	var unionPlaceDiv = document.createElement("div");
 	unionPlaceDiv.id = "unionPlace";
-	unionPlaceDiv.classList.add("whitePencil");
+	unionPlaceDiv.classList.add("sliderPencil");
 	unionPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(unionPlaceDiv);
 
@@ -120,19 +120,19 @@ function createSliderIdMember()
 	// Create the union religious date div
 	var unionReligiousDate = document.createElement("div");
 	unionReligiousDate.id = "unionReligiousDate";
-	unionReligiousDate.classList.add("whitePencil");
+	unionReligiousDate.classList.add("sliderPencil");
 	unionReligiousDate.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousDate);
 	// Create the union religious place 1 div
 	var unionReligiousPlace1 = document.createElement("div");
 	unionReligiousPlace1.id = "unionReligiousPlace1";
-	unionReligiousPlace1.classList.add("whitePencil");
+	unionReligiousPlace1.classList.add("sliderPencil");
 	unionReligiousPlace1.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousPlace1);
 	// Create the union religious place 2 div
 	var unionReligiousPlace2 = document.createElement("div");
 	unionReligiousPlace2.id = "unionReligiousPlace2";
-	unionReligiousPlace2.classList.add("whitePencil");
+	unionReligiousPlace2.classList.add("sliderPencil");
 	unionReligiousPlace2.classList.add("center");
 	idMemberDiv.appendChild(unionReligiousPlace2);
 
@@ -145,13 +145,13 @@ function createSliderIdMember()
 	// Create the death date div
 	var deathDateDiv = document.createElement("div");
 	deathDateDiv.id = "deathDate";
-	deathDateDiv.classList.add("whitePencil");
+	deathDateDiv.classList.add("sliderPencil");
 	deathDateDiv.classList.add("center");
 	idMemberDiv.appendChild(deathDateDiv);
 	// Create the death place div
 	var deathPlaceDiv = document.createElement("div");
 	deathPlaceDiv.id = "deathPlace";
-	deathPlaceDiv.classList.add("whitePencil");
+	deathPlaceDiv.classList.add("sliderPencil");
 	deathPlaceDiv.classList.add("center");
 	idMemberDiv.appendChild(deathPlaceDiv);
 
@@ -164,14 +164,14 @@ function createSliderIdMember()
 	// Create the note div
 	var noteDiv = document.createElement("div");
 	noteDiv.id = "note";
-	noteDiv.classList.add("whitePencil");
+	noteDiv.classList.add("sliderPencil");
 	noteDiv.classList.add("center");
 	idMemberDiv.appendChild(noteDiv);
 
 	// Create the additional files div and hide it
 	var additionalFilesDiv = document.createElement("div");
 	additionalFilesDiv.id = "additionalFilesDiv";
-	additionalFilesDiv.classList.add("whitePencil");
+	additionalFilesDiv.classList.add("sliderPencil");
 	additionalFilesDiv.style.display = "none";
 	divSlider.appendChild(additionalFilesDiv);
 }
